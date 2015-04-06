@@ -1,0 +1,4 @@
+rm.controller
+rm.domain
+rm.repository
+rm.service
