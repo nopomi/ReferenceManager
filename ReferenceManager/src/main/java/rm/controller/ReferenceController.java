@@ -10,6 +10,8 @@ import org.springframework.web.bind.annotation.RequestParam;
 import rm.service.ReferenceService;
 
 @Controller
+@RequestMapping("*")
+
 public class ReferenceController {
     
     @Autowired
@@ -18,12 +20,14 @@ public class ReferenceController {
     @RequestMapping(method = RequestMethod.GET)
     public String list(Model model) {
         model.addAttribute("reference", referenceService.list());
-        return "/WEB-INF/views/movies.jsp";
+        return "/WEB-INF/views/references.jsp";
     }
     
     @RequestMapping(method = RequestMethod.POST) 
     public String add(@RequestParam String text) {
+        if (text != null) {
         referenceService.add(text);
+        }
         return "redirect:/references";
     }
 }
