@@ -24,7 +24,7 @@
             <div class="panel panel-default">
                 <div class="panel-heading"><h4 class="panel-title">Add new reference</h4></div>
                 <div class="panel-body">
-                    <form role="form">
+                    <form role="form" action="/references" method="POST" >
                         <div class="row">
                             <div class="col-xs-12"><input class="form-control" type="text" id ="reference" placeholder="new reference here"></div>
 
