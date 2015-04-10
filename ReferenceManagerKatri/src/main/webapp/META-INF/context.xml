@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Context antiJARLocking="true" path="/ReferenceManager/deadline.referencemanager/Version.java">
+  <Resource auth="Container" driverClassName="org.postgresql.Driver" maxActive="100" maxIdle="30" maxWait="10000" name="jdbc:postgresql://localhost/kroos" password="a16c37a3e09b93b7" removeAbandoned="true" removeAbandonedTimeout="30" type="javax.sql.DataSource" url="jdbc:postgresql://localhost/kroos" username="kroos"/>
+</Context>
