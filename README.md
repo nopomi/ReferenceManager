@@ -1,5 +1,6 @@
-# ReferenceManager
-Huikea viitteidenhallintajärjestelmä
+# ReferenceManager  
+Huikea viitteidenhallintajärjestelmä  
 
-[Trello](https://trello.com/b/3MMNRP2i)
-[Jenkins](http://ohtu.jamo.io/job/Deadline-ReferenceManager/)
+[Trello](https://trello.com/b/3MMNRP2i)  
+[Jenkins](http://ohtu.jamo.io/job/Deadline-ReferenceManager/)  
+
