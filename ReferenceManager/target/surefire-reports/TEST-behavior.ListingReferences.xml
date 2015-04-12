@@ -1,8 +1,0 @@
-<testsuite tests='2' results='0' failures='0' disabled='2' errors='0' time='0.159' name='behavior.listing_references'>
-  <testcase classname='behavior.listing_references' name='user can view a list of references' time='0.007'>
-    <skipped />
-  </testcase>
-  <testcase classname='behavior.listing_references' name='the references are displayed correctly' time='0.012'>
-    <skipped />
-  </testcase>
-</testsuite>
