@@ -66,10 +66,10 @@
             </thead>
             <tbody>
               <tr class='primaryRow'>
-                <td>5</td>
+                <td>8</td>
                 <td class=''>0</td>
-                <td class='stepResultPending'>5</td>
-                <td>3.233</td>
+                <td class='stepResultPending'>8</td>
+                <td>6.581</td>
               </tr>
             </tbody>
           </table>
@@ -86,11 +86,11 @@
             </thead>
             <tbody>
               <tr class='primaryRow'>
-                <td>2</td>
-                <td>5</td>
+                <td>3</td>
+                <td>8</td>
                 <td class=''>0</td>
-                <td class='stepResultPending'>5</td>
-                <td>3.233</td>
+                <td class='stepResultPending'>8</td>
+                <td>6.581</td>
               </tr>
             </tbody>
           </table>
@@ -139,7 +139,7 @@
         <td>3</td>
         <td class=''>0</td>
         <td class='stepResultPending'>3</td>
-        <td>3.08</td>
+        <td>6.146</td>
       </tr>
 
        
@@ -151,7 +151,7 @@
               <tr class='primaryScenarioRow'>
                 <td title='Scenario'>user can add a reference when content is appropriate</td>
                 <td title='Result' class='stepResultPending'>pending</td>
-                <td title='Time (sec)'>0.143</td>
+                <td title='Time (sec)'>0.268</td>
               </tr>
               
               <tr class='scenarioComponents'>
@@ -190,7 +190,7 @@
               <tr class='secondaryScenarioRow'>
                 <td title='Scenario'>user can not add a reference with inadequate information</td>
                 <td title='Result' class='stepResultPending'>pending</td>
-                <td title='Time (sec)'>0.011</td>
+                <td title='Time (sec)'>0.015</td>
               </tr>
               
               <tr class='scenarioComponents'>
@@ -277,10 +277,10 @@
           <a href="#" onclick="$('scenarios_for_story_' + 1).toggle(); return false;">viewing_a_reference</a>
          
         </td>
-        <td>2</td>
+        <td>3</td>
         <td class=''>0</td>
-        <td class='stepResultPending'>2</td>
-        <td>0.153</td>
+        <td class='stepResultPending'>3</td>
+        <td>0.234</td>
       </tr>
 
        
@@ -292,7 +292,7 @@
               <tr class='primaryScenarioRow'>
                 <td title='Scenario'>user can view a reference entry they have just added</td>
                 <td title='Result' class='stepResultPending'>pending</td>
-                <td title='Time (sec)'>0.011</td>
+                <td title='Time (sec)'>0.01</td>
               </tr>
               
               <tr class='scenarioComponents'>
@@ -304,7 +304,7 @@
               
             
               <tr class='scenarioComponents'>
-                <td>when user has not navigated further</td>
+                <td>when user attempts to view an entry</td>
                 <td class='stepResultSuccess'>success</td>
                 <td />
               </tr>
@@ -323,7 +323,7 @@
               <tr class='secondaryScenarioRow'>
                 <td title='Scenario'>user can not view any references when there are none</td>
                 <td title='Result' class='stepResultPending'>pending</td>
-                <td title='Time (sec)'>0.011</td>
+                <td title='Time (sec)'>0.016</td>
               </tr>
               
               <tr class='scenarioComponents'>
@@ -351,6 +351,131 @@
               
             
           
+              <tr class='primaryScenarioRow'>
+                <td title='Scenario'>user will see all the fields of their entry</td>
+                <td title='Result' class='stepResultPending'>pending</td>
+                <td title='Time (sec)'>0.009</td>
+              </tr>
+              
+              <tr class='scenarioComponents'>
+                <td>given a new entry is added</td>
+                <td class='stepResultSuccess'>success</td>
+                <td />
+              </tr>
+              
+              
+            
+              <tr class='scenarioComponents'>
+                <td>when user attempts to view an entry</td>
+                <td class='stepResultSuccess'>success</td>
+                <td />
+              </tr>
+              
+              
+            
+              <tr class='scenarioComponents'>
+                <td>then all fields of the entry are displayed</td>
+                <td class='stepResultPending'>pending</td>
+                <td />
+              </tr>
+              
+              
+            
+          
+            </tbody>
+          </table>
+        </td>
+      </tr>
+        
+      
+      <tr class='primaryRow'>
+        <td>
+         
+          <a href="#" onclick="$('scenarios_for_story_' + 2).toggle(); return false;">listing_references</a>
+         
+        </td>
+        <td>2</td>
+        <td class=''>0</td>
+        <td class='stepResultPending'>2</td>
+        <td>0.201</td>
+      </tr>
+
+       
+      <tr id='scenarios_for_story_2' class='scenariosForStory' style='display:none;'>
+        <td colspan='5'>
+          <table class='scenariosForStoriesTable'>
+            <tbody>
+              
+              <tr class='primaryScenarioRow'>
+                <td title='Scenario'>user can view a list of references</td>
+                <td title='Result' class='stepResultPending'>pending</td>
+                <td title='Time (sec)'>0.009</td>
+              </tr>
+              
+              <tr class='scenarioComponents'>
+                <td>given at least one entry is in the database</td>
+                <td class='stepResultSuccess'>success</td>
+                <td />
+              </tr>
+              
+              
+            
+              <tr class='scenarioComponents'>
+                <td>when user attempts to view the entry list</td>
+                <td class='stepResultSuccess'>success</td>
+                <td />
+              </tr>
+              
+              
+            
+              <tr class='scenarioComponents'>
+                <td>then a listing of references is displayed</td>
+                <td class='stepResultPending'>pending</td>
+                <td />
+              </tr>
+              
+              
+            
+          
+              <tr class='secondaryScenarioRow'>
+                <td title='Scenario'>the references are displayed correctly</td>
+                <td title='Result' class='stepResultPending'>pending</td>
+                <td title='Time (sec)'>0.017</td>
+              </tr>
+              
+              <tr class='scenarioComponents'>
+                <td>given at least one entry is in the database</td>
+                <td class='stepResultSuccess'>success</td>
+                <td />
+              </tr>
+              
+              
+            
+              <tr class='scenarioComponents'>
+                <td>when user attempts to view the entry list</td>
+                <td class='stepResultSuccess'>success</td>
+                <td />
+              </tr>
+              
+              
+            
+              <tr class='scenarioComponents'>
+                <td>then all the available references are listed</td>
+                <td class='stepResultPending'>pending</td>
+                <td />
+              </tr>
+              
+              
+            
+              <tr class='scenarioComponents'>
+                <td>then scandinavian characters are displayed correctly</td>
+                <td class='stepResultPending'>pending</td>
+                <td />
+              </tr>
+              
+              
+            
+          
             </tbody>
           </table>
         </td>
@@ -365,8 +490,8 @@
 <div id='StoriesListPlain' style='display:none;'>
   <h2>Stories Text</h2>
   
-  <div>5 scenarios (including 5 pending) executed successfully.</div>
-  <div><br/><br/>&nbsp;&nbsp;Story: adding_a_reference<br/><br/>&nbsp;&nbsp;&nbsp;User can add a valid reference entry to the database<br/><br/>&nbsp;&nbsp;&nbsp;&nbsp;scenario user can add a reference when content is appropriate<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;given command new entry is selected<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;when mandatory fields are filled<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;when content is valid&nbsp;<span style='color:#BABFEE;'>[PENDING]</span><br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;then reference entry will be added to the database&nbsp;<span style='color:#BABFEE;'>[PENDING]</span><br/><br/>&nbsp;&nbsp;&nbsp;&nbsp;scenario user can not add a reference with inadequate information<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;given command new entry is selected<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;when content is valid<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;when mandatory fields are not filled&nbsp;<span style='color:#BABFEE;'>[PENDING]</span><br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;then reference entry will not be added to the database&nbsp;<span style='color:#BABFEE;'>[PENDING]</span><br/><br/>&nbsp;&nbsp;&nbsp;&nbsp;scenario user can not add a reference with invalid information<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;given command new entry is selected<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;when content is not valid<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;when mandatory fields are filled&nbsp;<span style='color:#BABFEE;'>[PENDING]</span><br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;then reference entry will not be added to the database&nbsp;<span style='color:#BABFEE;'>[PENDING]</span><br/><br/>&nbsp;&nbsp;Story: viewing_a_reference<br/><br/>&nbsp;&nbsp;&nbsp;User can view a reference entry<br/><br/>&nbsp;&nbsp;&nbsp;&nbsp;scenario user can view a reference entry they have just added<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;given a new entry is added<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;when user has not navigated further<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;then reference entry is displayed to the user&nbsp;<span style='color:#BABFEE;'>[PENDING]</span><br/><br/>&nbsp;&nbsp;&nbsp;&nbsp;scenario user can not view any references when there are none<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;given there are no references in the database<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;when user attempts to view an entry<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;then no reference entry is displayed&nbsp;<span style='color:#BABFEE;'>[PENDING]</span></div>
+  <div>8 scenarios (including 8 pending) executed successfully.</div>
+  <div><br/><br/>&nbsp;&nbsp;Story: adding_a_reference<br/><br/>&nbsp;&nbsp;&nbsp;User can add a valid reference entry to the database<br/><br/>&nbsp;&nbsp;&nbsp;&nbsp;scenario user can add a reference when content is appropriate<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;given command new entry is selected<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;when mandatory fields are filled<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;when content is valid&nbsp;<span style='color:#BABFEE;'>[PENDING]</span><br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;then reference entry will be added to the database&nbsp;<span style='color:#BABFEE;'>[PENDING]</span><br/><br/>&nbsp;&nbsp;&nbsp;&nbsp;scenario user can not add a reference with inadequate information<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;given command new entry is selected<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;when content is valid<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;when mandatory fields are not filled&nbsp;<span style='color:#BABFEE;'>[PENDING]</span><br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;then reference entry will not be added to the database&nbsp;<span style='color:#BABFEE;'>[PENDING]</span><br/><br/>&nbsp;&nbsp;&nbsp;&nbsp;scenario user can not add a reference with invalid information<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;given command new entry is selected<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;when content is not valid<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;when mandatory fields are filled&nbsp;<span style='color:#BABFEE;'>[PENDING]</span><br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;then reference entry will not be added to the database&nbsp;<span style='color:#BABFEE;'>[PENDING]</span><br/><br/>&nbsp;&nbsp;Story: viewing_a_reference<br/><br/>&nbsp;&nbsp;&nbsp;User can view a reference entry<br/><br/>&nbsp;&nbsp;&nbsp;&nbsp;scenario user can view a reference entry they have just added<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;given a new entry is added<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;when user attempts to view an entry<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;then reference entry is displayed to the user&nbsp;<span style='color:#BABFEE;'>[PENDING]</span><br/><br/>&nbsp;&nbsp;&nbsp;&nbsp;scenario user can not view any references when there are none<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;given there are no references in the database<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;when user attempts to view an entry<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;then no reference entry is displayed&nbsp;<span style='color:#BABFEE;'>[PENDING]</span><br/><br/>&nbsp;&nbsp;&nbsp;&nbsp;scenario user will see all the fields of their entry<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;given a new entry is added<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;when user attempts to view an entry<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;then all fields of the entry are displayed&nbsp;<span style='color:#BABFEE;'>[PENDING]</span><br/><br/>&nbsp;&nbsp;Story: listing_references<br/><br/>&nbsp;&nbsp;&nbsp;User can view a list of references<br/><br/>&nbsp;&nbsp;&nbsp;&nbsp;scenario user can view a list of references<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;given at least one entry is in the database<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;when user attempts to view the entry list<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;then a listing of references is displayed&nbsp;<span style='color:#BABFEE;'>[PENDING]</span><br/><br/>&nbsp;&nbsp;&nbsp;&nbsp;scenario the references are displayed correctly<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;given at least one entry is in the database<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;when user attempts to view the entry list<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;then all the available references are listed&nbsp;<span style='color:#BABFEE;'>[PENDING]</span><br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;then scandinavian characters are displayed correctly&nbsp;<span style='color:#BABFEE;'>[PENDING]</span></div>
 </div>
 
       </div>
