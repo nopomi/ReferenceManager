@@ -1,11 +1,10 @@
-
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
 import static org.junit.Assert.*;
-import rm.domain.Reference;
+import wad.domain.Reference;
 
 public class ReferenceTest {
 
@@ -40,26 +39,23 @@ public class ReferenceTest {
     
     @Test
     public void constructorDoesNotCreateReferenceInConstructor(){
-        assertNull(reference.getText());
+        assertNull(reference.getReference());
     }
 
     @Test
     public void setterSetsText() {
-        reference.setText(text);
-        assertEquals(text, reference.getText());
+        reference.setReference(text);
+        assertEquals(text, reference.getReference());
     }
     
     
     @Test
     public void setterCanChangeText(){
-        reference.setText(text);
+        reference.setReference(text);
         String alternativeText = "alternative text";
-        reference.setText(alternativeText);
-        assertEquals(alternativeText, reference.getText());
+        reference.setReference(alternativeText);
+        assertEquals(alternativeText, reference.getReference());
     }
 
-    @After
-    public void tearDown() {
-    }
 
 }
