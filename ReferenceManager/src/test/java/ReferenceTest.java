@@ -41,6 +41,12 @@ public class ReferenceTest {
     public void constructorDoesNotCreateReferenceInConstructor(){
         assertNull(reference.getReference());
     }
+    
+    @Test
+    public void ableToSetNewId(){
+        reference.setRefId("123123");
+        assertEquals(reference.getRefId(), "123123");
+    }
 
     @Test
     public void setterSetsText() {
