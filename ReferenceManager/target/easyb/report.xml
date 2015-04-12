@@ -1,0 +1,39 @@
+<easyb time='Sun Apr 12 09:06:30 EEST 2015' totalbehaviors='5' totalfailedbehaviors='0' totalpendingbehaviors='5' executionTime='3233'>
+  <stories scenarios='5' failedscenarios='0' pendingscenarios='5' executionTime='3233'>
+    <story name='adding_a_reference' scenarios='3' failedscenarios='0' pendingscenarios='3' executionTime='3080'>
+      <description name='User can add a valid reference entry to the database' />
+      <scenario name='user can add a reference when content is appropriate' result='pending' executionTime='143'>
+        <given name='command new entry is selected' result='success' />
+        <when name='mandatory fields are filled' result='success' />
+        <when name='content is valid' result='pending' />
+        <then name='reference entry will be added to the database' result='pending' />
+      </scenario>
+      <scenario name='user can not add a reference with inadequate information' result='pending' executionTime='11'>
+        <given name='command new entry is selected' result='success' />
+        <when name='content is valid' result='success' />
+        <when name='mandatory fields are not filled' result='pending' />
+        <then name='reference entry will not be added to the database' result='pending' />
+      </scenario>
+      <scenario name='user can not add a reference with invalid information' result='pending' executionTime='10'>
+        <given name='command new entry is selected' result='success' />
+        <when name='content is not valid' result='success' />
+        <when name='mandatory fields are filled' result='pending' />
+        <then name='reference entry will not be added to the database' result='pending' />
+      </scenario>
+    </story>
+    <story name='viewing_a_reference' scenarios='2' failedscenarios='0' pendingscenarios='2' executionTime='153'>
+      <description name='User can view a reference entry' />
+      <scenario name='user can view a reference entry they have just added' result='pending' executionTime='11'>
+        <given name='a new entry is added' result='success' />
+        <when name='user has not navigated further' result='success' />
+        <then name='reference entry is displayed to the user' result='pending' />
+      </scenario>
+      <scenario name='user can not view any references when there are none' result='pending' executionTime='11'>
+        <given name='there are no references in the database' result='success' />
+        <when name='user attempts to view an entry' result='success' />
+        <then name='no reference entry is displayed' result='pending' />
+      </scenario>
+    </story>
+  </stories>
+  <specifications specifications='0' failedspecifications='0' pendingspecifications='0' executionTime='0' />
+</easyb>

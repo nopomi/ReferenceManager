@@ -1,0 +1,8 @@
+<testsuite tests='2' results='0' failures='0' disabled='2' errors='0' time='0.153' name='behavior.viewing_a_reference'>
+  <testcase classname='behavior.viewing_a_reference' name='user can view a reference entry they have just added' time='0.011'>
+    <skipped />
+  </testcase>
+  <testcase classname='behavior.viewing_a_reference' name='user can not view any references when there are none' time='0.011'>
+    <skipped />
+  </testcase>
+</testsuite>
