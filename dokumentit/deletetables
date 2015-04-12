@@ -1,0 +1,9 @@
+DROP TABLE authormaps;
+
+DROP TABLE viite;
+
+DROP TABLE author;
+
+DROP TABLE publisher;
+
+DROP TABLE editor;

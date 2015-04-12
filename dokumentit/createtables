@@ -1,0 +1,35 @@
+CREATE TABLE author	(
+	author_id serial NOT NULL PRIMARY KEY,
+	firstname varchar,
+	suffix varchar,
+	lastname varchar NOT NULL	);
+
+CREATE TABLE publisher	(
+	publisher_id serial NOT NULL PRIMARY KEY,
+	publisher varchar NOT NULL,
+	address varchar	);
+
+CREATE TABLE editor	(
+	editor_id serial NOT NULL PRIMARY KEY,
+	editor varchar NOT NULL,
+	address varchar	);
+
+CREATE TABLE viite 	(
+	viite_id serial NOT NULL PRIMARY KEY,
+	type varchar NOT NULL,
+	editor integer REFERENCES editor(editor_id),
+	title varchar NOT NULL,
+	publisher integer REFERENCES publisher(publisher_id),
+	year integer NOT NULL,
+	volume varchar,
+	number varchar,
+	serier varchar,
+	edition varchar,
+	month varchar	);
+
+CREATE TABLE authormaps	(
+	author_id integer NOT NULL REFERENCES author(author_id),
+	viite_id integer NOT NULL REFERENCES viite(viite_id),
+	PRIMARY KEY(author_id,viite_id)	);
+	
+
