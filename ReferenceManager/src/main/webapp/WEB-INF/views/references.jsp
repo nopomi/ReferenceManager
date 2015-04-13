@@ -17,5 +17,7 @@
                 <li>${reference.refId} --- ${reference.reference}</li>
             </c:forEach>
         </ol>
+        
+        <a href="/add">Add references</a>
     </body>
 </html>
