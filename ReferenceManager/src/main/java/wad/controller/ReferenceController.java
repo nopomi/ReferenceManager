@@ -22,4 +22,13 @@ public class ReferenceController {
         return "/WEB-INF/views/references.jsp";
     }
 
+    @RequestMapping(method = RequestMethod.POST)
+    public String add(@RequestParam String id, @RequestParam String reference) {
+        if (id != "" && reference != "") {
+            referenceService.add(id, reference);
+        }
+        return "redirect:/references";
+
+    }
+
 }

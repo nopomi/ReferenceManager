@@ -8,6 +8,6 @@ public class DefaultController {
 
     @RequestMapping("*")
     public String handleDefault() {
-        return "/WEB-INF/views/menu.jsp";
+        return "/WEB-INF/views/references.jsp";
     }
 }
