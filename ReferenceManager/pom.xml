@@ -16,6 +16,7 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <start-class>wad.Application</start-class>
         <java.version>1.7</java.version>
+        <easyb.version>1.5</easyb.version>
     </properties>
 
     <parent>
@@ -25,6 +26,12 @@
     </parent>
 
     <dependencies>
+        <dependency>
+            <groupId>org.easyb</groupId>
+            <artifactId>easyb-core</artifactId>
+            <version>${easyb.version}</version>
+            <scope>test</scope>        
+        </dependency>
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
@@ -98,6 +105,25 @@
             <plugin>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
+            </plugin>
+
+            <plugin>
+                <groupId>org.easyb</groupId>
+                <artifactId>maven-easyb-plugin</artifactId>
+                <version>1.4</version>
+                <executions>
+                    <execution>
+                        <phase>integration-test</phase>
+                        <goals>
+                            <goal>test</goal>
+                        </goals>
+                    </execution>
+                </executions>
+                <configuration>
+                    <storyType>html</storyType>
+                    <storyReport>${basedir}/target/easyb/easyb-report.html
+                    </storyReport>
+                </configuration>
             </plugin>
         </plugins>
     </build>
