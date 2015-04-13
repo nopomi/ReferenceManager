@@ -17,7 +17,7 @@
             <form action="/add" method="POST">
                 ID: <input type="text" name="id" id="id"/><br/>
                 Reference text: <input type="text" name="reference" id="reference"/><br/>
-                <input type="submit"/>            
+                <input name="add" type="submit"/>            
             </form>
         </div>
 

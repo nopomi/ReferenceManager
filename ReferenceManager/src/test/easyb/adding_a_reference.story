@@ -1,27 +1,22 @@
-import wad.controller.*
-import wad.domain.*
-import wad.repository.*
-import wad.service.*
+import org.openqa.selenium.*
+import org.openqa.selenium.htmlunit.HtmlUnitDriver;
 
 description 'User can add a valid reference entry to the database'
 
 scenario "user can add a reference when content is appropriate", {
-    given 'command new entry is selected'
-    when 'mandatory fields are filled'
-    and 'content is valid'
-    then 'reference entry will be added to the database'
-}
-
-scenario "user can not add a reference with inadequate information", {
-    given 'command new entry is selected'
-    when 'content is valid'
-    and 'mandatory fields are not filled'
-    then 'reference entry will not be added to the database'
-}
-
-scenario "user can not add a reference with invalid information", {
-    given 'command new entry is selected'
-    when 'content is not valid'
-    and 'mandatory fields are filled'
-    then 'reference entry will not be added to the database'
+    given 'page is opened', {
+        driver = new HtmlUnitDriver();
+        driver.get("http://localhost:8080"); 
+    }
+    when 'mandatory fields are filled', {
+        element = driver.findElement(By.name("id"));
+        element.sendKeys("1");
+        element = driver.findElement(By.name("reference"));
+        element.sendKeys("akkep");
+        element = driver.findElement(By.name("add"));
+        element.submit();
+    }
+    then 'reference entry will be added to the database', {
+        driver.getPageSource().contains("akkep").shouldBe true
+    }
 }

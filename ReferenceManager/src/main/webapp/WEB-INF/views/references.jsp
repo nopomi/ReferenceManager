@@ -35,7 +35,7 @@
                         <div class="row">
                             <div class="col-xs-12">
                                 <br>
-                                <button type="submit" class="btn btn-default">Add reference</button>
+                                <button name="add" type="submit" class="btn btn-default">Add reference</button>
                             </div>
                         </div>
                     </form>
