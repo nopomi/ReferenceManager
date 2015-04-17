@@ -266,7 +266,7 @@
                                 <c:when test="${not empty references}">
                                     <c:forEach var="reference" items="${references}">
                                         <tr>
-                                            <td>${reference.refId}</td>
+                                            <td><a href="/reference?id=${reference.refId}">${reference.refId}</td>
                                             <td>${reference.author}</td>
                                             <td>${reference.title}</td>
                                             <td>${reference.year}</td>
@@ -276,7 +276,7 @@
                                 </c:when>
                                 <c:otherwise>
                                     <tr>
-                                        <td>No references yet!</td>
+                                        <td>No references yet!</a</td>
                                         <td></td>
                                         <td></td>
                                         <td></td>

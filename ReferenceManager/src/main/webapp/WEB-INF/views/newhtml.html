@@ -1,11 +1,4 @@
 <!DOCTYPE html>
-<!--
-To change this license header, choose License Headers in Project Properties.
-To change this template file, choose Tools | Templates
-and open the template in the editor.
--->
-
-<!DOCTYPE html>
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
@@ -13,10 +6,10 @@ and open the template in the editor.
         <link href="../../css/bootstrap.css" rel="stylesheet" type="text/css"/>
         <link href="../../css/bootstrap-theme.css" rel="stylesheet" type="text/css"/>
 
-        <title>References</title>
+        <title>Hiekkalaatikko</title>
     </head>
 
-    <body>
+   <body>
         <h1></h1>
         <div class="container">      
 
@@ -269,7 +262,7 @@ and open the template in the editor.
                                 <c:when test="${not empty references}">
                                     <c:forEach var="reference" items="${references}">
                                         <tr>
-                                            <td>${reference.refId}</td>
+                                            <td><a href="/reference?id=${reference.refId}">${reference.refId}</td>
                                             <td>${reference.author}</td>
                                             <td>${reference.title}</td>
                                             <td>${reference.year}</td>
@@ -279,7 +272,7 @@ and open the template in the editor.
                                 </c:when>
                                 <c:otherwise>
                                     <tr>
-                                        <td>No references yet!</td>
+                                        <td>No references yet!</a</td>
                                         <td></td>
                                         <td></td>
                                         <td></td>
