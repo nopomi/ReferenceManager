@@ -19,8 +19,9 @@ public class ReferenceService {
     @Transactional
     public void add(String id, String reference) {
         Reference ref = new Reference();
-        ref.setRefId(id);
-        ref.setReference(reference);
+// pitää koodata uudelleen vastaamaan sovelluslogiikan muutoksia
+//        ref.setRefId(id);
+//        ref.setReference(reference);
         referenceRepository.save(ref);
     }
 

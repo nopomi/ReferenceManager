@@ -37,31 +37,6 @@ public class ReferenceTest {
         assertFalse(reference == null);
     }
     
-    @Test
-    public void constructorDoesNotCreateReferenceInConstructor(){
-        assertNull(reference.getReference());
-    }
-    
-    @Test
-    public void ableToSetNewId(){
-        reference.setRefId("123123");
-        assertEquals(reference.getRefId(), "123123");
-    }
-
-    @Test
-    public void setterSetsText() {
-        reference.setReference(text);
-        assertEquals(text, reference.getReference());
-    }
-    
-    
-    @Test
-    public void setterCanChangeText(){
-        reference.setReference(text);
-        String alternativeText = "alternative text";
-        reference.setReference(alternativeText);
-        assertEquals(alternativeText, reference.getReference());
-    }
-
+//NÄMÄ UUSITTAVA KOKONAAN
 
 }
