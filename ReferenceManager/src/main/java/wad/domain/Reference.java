@@ -13,21 +13,7 @@ public class Reference extends AbstractPersistable<Long> {
     private String title;
     private int year;
 
-    public String getRefId() {
-        return label;
-    }
-
-    public void setRefId(String label) {
-        this.label = label;
-    }
-
-    public String getReference() {
-        return author;
-    }
-
-    public void setReference(String author) {
-        this.author = author;
-    }
+    
 
     public String getLabel() {
         return label;
