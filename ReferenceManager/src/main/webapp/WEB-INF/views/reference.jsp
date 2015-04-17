@@ -22,7 +22,7 @@
                 <div class="panel-body">   
 
                     <c:choose>
-                        <c:when test="${reference.type = article}">
+                        <c:when test="${reference.type == 'article'}">
                             Id: ${reference.refId} <br>
                             Author: ${reference.author} <br>
                             Title: ${reference.title} <br>
@@ -34,7 +34,7 @@
                             Publisher: ${reference.publisher} <br>
                             Address: ${reference.address} <br> 
                         </c:when>
-                        <c:when test="${reference.type = book}">
+                        <c:when test="${reference.type == 'book'}">
                             Id: ${reference.refId} <br>
                             Author: ${reference.author} <br>
                             Title: ${reference.title} <br>
