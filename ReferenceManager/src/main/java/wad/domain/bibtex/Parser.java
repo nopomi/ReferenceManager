@@ -1,7 +1,12 @@
-package wad.domain;
+package wad.domain.bibtex;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import wad.domain.ArticleReference;
+import wad.domain.BookReference;
+import wad.domain.InproceedingsReference;
+import wad.domain.Reference;
 import wad.service.ReferenceService;
+import wad.domain.ReferenceType;
 import wad.domain.ReferenceType;
 
 public class Parser {
