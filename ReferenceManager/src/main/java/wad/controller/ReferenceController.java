@@ -21,17 +21,4 @@ public class ReferenceController {
         model.addAttribute("references", referenceService.list());
         return "/WEB-INF/views/references.jsp";
     }
-
-    @RequestMapping(method = RequestMethod.POST)
-    public String add(@RequestParam String id, @RequestParam String reference) {
-        //HUOM tämä luokka ei enää toimi, tarvitaan lisää requestParam-kenttiä
-        //katso sovelluslogiikasta Reference-luokkien rakennetta ja koodaa tämä uusiksi.
-        //myös services-luokkaa pitää muokata
-        if (id != "" && reference != "") {
-            referenceService.add(id, reference);
-        }
-        return "redirect:/references";
-
-    }
-
 }

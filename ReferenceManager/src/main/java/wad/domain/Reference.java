@@ -1,6 +1,5 @@
 package wad.domain;
 
-import javax.persistence.Column;
 import javax.persistence.Entity;
 import org.springframework.data.jpa.domain.AbstractPersistable;
 
@@ -11,9 +10,7 @@ public class Reference extends AbstractPersistable<Long> {
     private String label;
     private String author;
     private String title;
-    private int year;
-
-    
+    private int year; 
 
     public String getLabel() {
         return label;

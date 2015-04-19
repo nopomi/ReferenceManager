@@ -68,6 +68,12 @@
                                     <input class="form-control" type="text" name="tilte" id="title">
                                 </div>
                             </div>
+                            
+                            <div class="form-group">
+                                <label class="col-xs-1 control-label" for="year">Year</label>     
+                                <div class="col-xs-11">  
+                                    <input class="form-control" type="text" name="year" id="year"></div>
+                            </div>
 
                             <div class="form-group">
                                 <label class="col-xs-1 control-label" for="journal">Journal</label> 
@@ -88,12 +94,6 @@
                                 <div class="col-xs-11">
                                     <input class="form-control" type="text" name="number" id="number">
                                 </div>
-                            </div>
-
-                            <div class="form-group">
-                                <label class="col-xs-1 control-label" for="year">Year</label>     
-                                <div class="col-xs-11">  
-                                    <input class="form-control" type="text" name="year" id="year"></div>
                             </div>
 
                             <div class="form-group">
