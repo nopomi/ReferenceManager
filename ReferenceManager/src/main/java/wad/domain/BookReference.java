@@ -1,8 +1,17 @@
 
 package wad.domain;
 
-public class BookReference extends Reference{
+import javax.persistence.Entity;
+import org.springframework.data.jpa.domain.AbstractPersistable;
+
+@Entity
+public class BookReference extends AbstractPersistable<Long>{
     
+    private ReferenceType type;
+    private String label;
+    private String author;
+    private String title;
+    private int year; 
     private String publisher;
     private String volume;
     private String series;
@@ -12,6 +21,8 @@ public class BookReference extends Reference{
     private String note;
     private String key;
 
+    
+    
     public String getPublisher() {
         return publisher;
     }
@@ -74,6 +85,46 @@ public class BookReference extends Reference{
 
     public void setKey(String key) {
         this.key = key;
+    }
+
+    public ReferenceType getType() {
+        return type;
+    }
+
+    public void setType(ReferenceType type) {
+        this.type = type;
+    }
+
+    public String getLabel() {
+        return label;
+    }
+
+    public void setLabel(String label) {
+        this.label = label;
+    }
+
+    public String getAuthor() {
+        return author;
+    }
+
+    public void setAuthor(String author) {
+        this.author = author;
+    }
+
+    public String getTitle() {
+        return title;
+    }
+
+    public void setTitle(String title) {
+        this.title = title;
+    }
+
+    public int getYear() {
+        return year;
+    }
+
+    public void setYear(int year) {
+        this.year = year;
     }
     
     

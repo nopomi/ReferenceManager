@@ -1,7 +1,16 @@
 package wad.domain;
 
-public class ArticleReference extends Reference {
+import javax.persistence.Entity;
+import org.springframework.data.jpa.domain.AbstractPersistable;
 
+@Entity
+public class ArticleReference extends AbstractPersistable<Long>{
+
+    private ReferenceType type;
+    private String label;
+    private String author;
+    private String title;
+    private int year; 
     private String journal;
     private String volume;
     private String number;
@@ -10,6 +19,46 @@ public class ArticleReference extends Reference {
     private String note;
     private String key;
 
+    public ReferenceType getType() {
+        return type;
+    }
+
+    public void setType(ReferenceType type) {
+        this.type = type;
+    }
+
+    public String getLabel() {
+        return label;
+    }
+
+    public void setLabel(String label) {
+        this.label = label;
+    }
+
+    public String getAuthor() {
+        return author;
+    }
+
+    public void setAuthor(String author) {
+        this.author = author;
+    }
+
+    public String getTitle() {
+        return title;
+    }
+
+    public void setTitle(String title) {
+        this.title = title;
+    }
+
+    public int getYear() {
+        return year;
+    }
+
+    public void setYear(int year) {
+        this.year = year;
+    }
+    
     public String getJournal() {
         return journal;
     }
@@ -65,5 +114,7 @@ public class ArticleReference extends Reference {
     public void setKey(String key) {
         this.key = key;
     }
+    
+    
 
 }

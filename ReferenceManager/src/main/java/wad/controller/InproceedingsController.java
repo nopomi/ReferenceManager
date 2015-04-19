@@ -20,7 +20,7 @@ public class InproceedingsController {
     @RequestMapping(method = RequestMethod.POST)
     public String addBook(@ModelAttribute InproceedingsReference inp) {
         inp.setType(ReferenceType.INPROCEEDINGS);
-        referenceService.addInproceeding(inp);
+      //  referenceService.addInproceeding(inp);
         return "redirect:/references";
     }
     

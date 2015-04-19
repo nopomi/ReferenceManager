@@ -20,7 +20,7 @@ public class ArticleController {
     @RequestMapping(method = RequestMethod.POST)
     public String addArticle(@ModelAttribute ArticleReference article) {
         article.setType(ReferenceType.ARTICLE);
-        referenceService.addArticle(article);
+//        referenceService.addArticle(article);
         return "redirect:/references";
     }
 }

@@ -18,7 +18,7 @@ public class ReferenceController {
 
     @RequestMapping(method = RequestMethod.GET)
     public String list(Model model) {
-        model.addAttribute("references", referenceService.list());
+//        model.addAttribute("references", referenceService.list());
         return "/WEB-INF/views/references.jsp";
     }
 }
