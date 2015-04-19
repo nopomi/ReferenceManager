@@ -53,11 +53,6 @@
                         </c:otherwise>
                     </c:choose>
 
-                    <br>
-
-
-                    <a href="path_to_file" download>Download reference in BibTex format</a>
-
                 </div>
             </div>
         </div>
