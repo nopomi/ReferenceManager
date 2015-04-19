@@ -15,7 +15,6 @@ import wad.domain.InproceedingsReference;
 import wad.repository.ArticleRepository;
 import wad.repository.BookRepository;
 import wad.repository.InproceedingsRepository;
-import wad.service.ReferenceService;
 
 public class BibCreator {
 

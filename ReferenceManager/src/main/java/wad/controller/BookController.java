@@ -7,7 +7,6 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import wad.domain.BookReference;
-import wad.domain.ReferenceType;
 import wad.service.ReferenceService;
 
 @Controller
@@ -19,8 +18,7 @@ public class BookController {
     
     @RequestMapping(method = RequestMethod.POST)
     public String addBook(@ModelAttribute BookReference book) {
-//        book.setType(ReferenceType.BOOK);
-//        referenceService.addBook(book);
+        referenceService.addBook(book);
         return "redirect:/references";
     }
     

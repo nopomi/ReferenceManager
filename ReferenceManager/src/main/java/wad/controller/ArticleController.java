@@ -7,7 +7,6 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import wad.domain.ArticleReference;
-import wad.domain.ReferenceType;
 import wad.service.ReferenceService;
 
 @Controller
@@ -19,8 +18,7 @@ public class ArticleController {
     
     @RequestMapping(method = RequestMethod.POST)
     public String addArticle(@ModelAttribute ArticleReference article) {
-        article.setType(ReferenceType.ARTICLE);
-//        referenceService.addArticle(article);
+        referenceService.addArticle(article);
         return "redirect:/references";
     }
 }
