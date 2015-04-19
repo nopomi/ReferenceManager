@@ -29,6 +29,9 @@ public class BibCreator {
     private Parser parser;
 
     public String createBibFile() {
+        if(articleRepository==null){
+            return System.currentTimeMillis()+".bib";
+        }
         Iterable<ArticleReference> articleRefs = articleRepository.findAll();
         Iterable<InproceedingsReference> inproceedingsRefs = inproceedingsRepository.findAll();
         Iterable<BookReference> bookRefs = bookRepository.findAll();
