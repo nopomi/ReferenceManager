@@ -285,6 +285,7 @@
                             </c:choose>
                         </tbody>
                     </table>
+                    <a class="btn btn-default" href="/references/download">Download all references in BibTex format</a>                
                 </div>
             </div>
         </div>
