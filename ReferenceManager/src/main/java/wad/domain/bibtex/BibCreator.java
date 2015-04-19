@@ -9,24 +9,41 @@ import java.io.UnsupportedEncodingException;
 import java.io.Writer;
 import java.util.ArrayList;
 import org.springframework.beans.factory.annotation.Autowired;
-import wad.domain.Reference;
+import wad.domain.ArticleReference;
+import wad.domain.BookReference;
+import wad.domain.InproceedingsReference;
+import wad.repository.ArticleRepository;
+import wad.repository.BookRepository;
+import wad.repository.InproceedingsRepository;
 import wad.service.ReferenceService;
 
 public class BibCreator {
 
     @Autowired
-    private ReferenceService refService;
+    private ArticleRepository articleRepository;
+    @Autowired
+    private InproceedingsRepository inproceedingsRepository;
+    @Autowired
+    private BookRepository bookRepository;
     @Autowired
     private Parser parser;
 
     public String createBibFile() {
-        Iterable<Reference> references = refService.list();
+        Iterable<ArticleReference> articleRefs = articleRepository.findAll();
+        Iterable<InproceedingsReference> inproceedingsRefs = inproceedingsRepository.findAll();
+        Iterable<BookReference> bookRefs = bookRepository.findAll();
         PrintWriter writer;
         String fileName = System.currentTimeMillis()+".bib";
         try {
             writer = new PrintWriter(fileName, "UTF-8");
-            for (Reference reference : references) {
-                writer.println(parser.createBibTexString(reference));
+            for (BookReference bookRef : bookRefs) {
+                writer.println(parser.createBibTexString(bookRef));
+            }
+            for (ArticleReference articleRef : articleRefs) {
+                writer.println(parser.createBibTexString(articleRef));
+            }
+            for (InproceedingsReference inproceedingsRef : inproceedingsRefs) {
+                writer.println(parser.createBibTexString(inproceedingsRef));
             }
         } catch (FileNotFoundException f) {
             System.out.println("File not found, please check the input");

@@ -6,33 +6,37 @@ import org.springframework.transaction.annotation.Transactional;
 import wad.domain.ArticleReference;
 import wad.domain.BookReference;
 import wad.domain.InproceedingsReference;
-import wad.domain.Reference;
-import wad.repository.ReferenceRepository;
+import wad.repository.ArticleRepository;
+import wad.repository.BookRepository;
+import wad.repository.InproceedingsRepository;
 
 @Service
 public class ReferenceService {
 
     @Autowired
-    private ReferenceRepository referenceRepository;
-    
-
-    public Iterable<Reference> list() {
-        return referenceRepository.findAll();
-    }
-
-    @Transactional
-    public void addArticle(ArticleReference article) {
-        referenceRepository.save(article);
-    }
-    
-    @Transactional
-    public void addBook(BookReference book) {
-        referenceRepository.save(book);
-    }
-    
-    @Transactional
-    public void addInproceeding(InproceedingsReference inproceedings) {
-        referenceRepository.save(inproceedings);
-    }
+    private ArticleRepository articleRepository;
+    @Autowired
+    private InproceedingsRepository inproceedingsRepository;
+    @Autowired
+    private BookRepository bookRepository;
+//
+//    public Iterable<Reference> list() {
+//        return null;
+//    }
+//
+//    @Transactional
+//    public void addArticle(ArticleReference article) {
+//        referenceRepository.save(article);
+//    }
+//
+//    @Transactional
+//    public void addBook(BookReference book) {
+//        referenceRepository.save(book);
+//    }
+//
+//    @Transactional
+//    public void addInproceeding(InproceedingsReference inproceedings) {
+//        referenceRepository.save(inproceedings);
+//    }
 
 }

@@ -19,8 +19,8 @@ public class BookController {
     
     @RequestMapping(method = RequestMethod.POST)
     public String addBook(@ModelAttribute BookReference book) {
-        book.setType(ReferenceType.BOOK);
-        referenceService.addBook(book);
+//        book.setType(ReferenceType.BOOK);
+//        referenceService.addBook(book);
         return "redirect:/references";
     }
     
