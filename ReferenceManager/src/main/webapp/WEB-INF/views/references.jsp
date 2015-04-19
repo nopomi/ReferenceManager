@@ -263,16 +263,35 @@
                         </thead>
                         <tbody>
                             <c:choose>
-                                <c:when test="${not empty references}">
-                                    <c:forEach var="reference" items="${references}">
+                                <c:when test="${not empty articles or not empty books or not empty inps}">
+                                    <c:forEach var="article" items="${articles}">
                                         <tr>
-                                            <td><a href="/reference?id=${reference.label}">${reference.label}</td>
-                                            <td>${reference.author}</td>
-                                            <td>${reference.title}</td>
-                                            <td>${reference.year}</td>
+                                            <td><a href="/reference?id=${article.label}">${article.label}</td>
+                                            <td>${article.author}</td>
+                                            <td>${article.title}</td>
+                                            <td>${article.year}</td>
 
                                         </tr>
-                                    </c:forEach>    
+                                    </c:forEach>
+                                    
+                                    <c:forEach var="book" items="${books}">
+                                        <tr>
+                                            <td><a href="/reference?id=${book.label}">${book.label}</td>
+                                            <td>${book.author}</td>
+                                            <td>${book.title}</td>
+                                            <td>${book.year}</td>
+
+                                        </tr>
+                                    </c:forEach>
+                                    <c:forEach var="inp" items="${inps}">
+                                        <tr>
+                                            <td><a href="/reference?id=${inp.label}">${inp.label}</td>
+                                            <td>${inp.author}</td>
+                                            <td>${inp.title}</td>
+                                            <td>${inp.year}</td>
+
+                                        </tr>
+                                    </c:forEach>                                         
                                 </c:when>
                                 <c:otherwise>
                                     <tr>
