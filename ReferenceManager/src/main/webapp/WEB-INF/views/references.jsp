@@ -65,7 +65,7 @@
                             <div class="form-group">
                                 <label class="col-xs-1 control-label" for="title">Title</label> 
                                 <div class="col-xs-11">
-                                    <input class="form-control" type="text" name="tilte" id="title">
+                                    <input class="form-control" type="text" name="title" id="title">
                                 </div>
                             </div>
                             
