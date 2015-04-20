@@ -1,6 +1,6 @@
 package wad.controller;
 
-import static com.sun.xml.internal.ws.spi.db.BindingContextFactory.LOGGER;
+//import static com.sun.xml.internal.ws.spi.db.BindingContextFactory.LOGGER;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
