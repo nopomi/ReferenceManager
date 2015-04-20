@@ -51,34 +51,34 @@
                             <div class="form-group">
                                 <label class="col-xs-1 control-label" for="label">Label</label>
                                 <div class ="col-xs-11">
-                                    <input class="form-control" type="text" id ="label" name="label">
+                                    <input class="form-control" type="text" id ="article-label" name="label">
                                 </div>
                             </div>
 
                             <div class="form-group">
                                 <label class="col-xs-1 control-label" for="author">Author</label>
                                 <div class="col-xs-11">
-                                    <input class="form-control" type="text" name="author" id="author">
+                                    <input class="form-control" type="text" name="author" id="article-author">
                                 </div>
                             </div>
 
                             <div class="form-group">
                                 <label class="col-xs-1 control-label" for="title">Title</label> 
                                 <div class="col-xs-11">
-                                    <input class="form-control" type="text" name="title" id="title">
+                                    <input class="form-control" type="text" name="title" id="article-title">
                                 </div>
                             </div>
 
                             <div class="form-group">
                                 <label class="col-xs-1 control-label" for="year">Year</label>     
                                 <div class="col-xs-11">  
-                                    <input class="form-control" type="text" name="year" id="year"></div>
+                                    <input class="form-control" type="text" name="year" id="article-year"></div>
                             </div>
 
                             <div class="form-group">
                                 <label class="col-xs-1 control-label" for="journal">Journal</label> 
                                 <div class="col-xs-11">
-                                    <input class="form-control" type="text" name="journal" id="journal">
+                                    <input class="form-control" type="text" name="journal" id="article-journal">
                                 </div>
                             </div>
 
@@ -122,7 +122,7 @@
                                 </div>
                             </div>
 
-                            <button type="submit" class="btn btn-default">Add reference</button>
+                            <button type="submit" id="article-add" class="btn btn-default">Add reference</button>
 
                         </form>
                     </div>
@@ -143,35 +143,35 @@
                             <div class="form-group">
                                 <label class="col-xs-1 control-label" for="label">Label</label>
                                 <div class ="col-xs-11">
-                                    <input class="form-control" type="text" id ="label" name="label">
+                                    <input class="form-control" type="text" id ="book-label" name="label">
                                 </div>
                             </div>
 
                             <div class="form-group">
                                 <label for="author" class="col-xs-1 control-label">Author</label>   
                                 <div class ="col-xs-11">
-                                    <input class="form-control" type="text" name="author" id="author">
+                                    <input class="form-control" type="text" name="author" id="book-author">
                                 </div>
                             </div>
 
                             <div class="form-group">
                                 <label for="title" class="col-xs-1 control-label">Title</label>    
                                 <div class ="col-xs-11">
-                                    <input class="form-control" type="text" name="title" id="title">
+                                    <input class="form-control" type="text" name="title" id="book-title">
                                 </div>
                             </div>
 
                             <div class="form-group">
                                 <label for="year" class="col-xs-1 control-label">Year</label>   
                                 <div class ="col-xs-11">
-                                    <input class="form-control" type="text" name="year" id="year">
+                                    <input class="form-control" type="text" name="year" id="book-year">
                                 </div>
                             </div>
 
                             <div class="form-group">
                                 <label for="publisher" class="col-xs-1 control-label">Publisher</label>        
                                 <div class ="col-xs-11">
-                                    <input class="form-control" type="text" name="publisher" id="publisher">
+                                    <input class="form-control" type="text" name="publisher" id="book-publisher">
                                 </div>
                             </div>
 
@@ -222,7 +222,7 @@
                                 </div>
                             </div>
 
-                            <button type="submit" class="btn btn-default">Add reference</button>
+                            <button type="submit" id="book-add" class="btn btn-default">Add reference</button>
                         </form>
                     </div>
                 </div>
@@ -241,35 +241,35 @@
                             <div class="form-group">
                                 <label for="label" class="col-xs-1 control-label">Label</label>
                                 <div class ="col-xs-11">
-                                    <input class="form-control" type="text" id ="label" name="label">
+                                    <input class="form-control" type="text" id ="inproceedings-label" name="label">
                                 </div>
                             </div>
 
                             <div class="form-group">
                                 <label for="author" class="col-xs-1 control-label">Author</label>   
                                 <div class ="col-xs-11">
-                                    <input class="form-control" type="text" name="author" id="author">
+                                    <input class="form-control" type="text" name="author" id="inproceedings-author">
                                 </div>
                             </div>
 
                             <div class="form-group">
                                 <label for="title" class="col-xs-1 control-label">Title</label>    
                                 <div class ="col-xs-11">
-                                    <input class="form-control" type="text" name="title" id="title">
+                                    <input class="form-control" type="text" name="title" id="inproceedings-title">
                                 </div>
                             </div>
 
                             <div class="form-group">
                                 <label for="year" class="col-xs-1 control-label">Year</label>   
                                 <div class ="col-xs-11">
-                                    <input class="form-control" type="text" name="year" id="year">
+                                    <input class="form-control" type="text" name="year" id="inproceedings-year">
                                 </div>
                             </div>
 
                             <div class="form-group">
                                 <label for="editor" class="col-xs-1 control-label">Editor</label>        
                                 <div class ="col-xs-11">
-                                    <input class="form-control" type="text" name="editor" id="editor">
+                                    <input class="form-control" type="text" name="editor" id="inproceedings-editor">
                                 </div>
                             </div>
 
@@ -335,7 +335,7 @@
                                 </div>
                             </div>
 
-                            <button type="submit" class="btn btn-default">Add reference</button>
+                            <button type="submit" id ="inproceedings-add" class="btn btn-default">Add reference</button>
                         </form>
                     </div>
                 </div>

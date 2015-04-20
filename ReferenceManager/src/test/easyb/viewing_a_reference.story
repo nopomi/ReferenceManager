@@ -7,17 +7,25 @@ scenario "user can view a reference entry they have just added", {
     given 'a new entry is added', {
         driver = new HtmlUnitDriver();
         driver.get("http://localhost:8080");
-}
-    when 'user attempts to view an entry', {
-        element = driver.findElement(By.name("id"));
-        element.sendKeys("1");
-        element = driver.findElement(By.name("reference"));
+        element = driver.findElement(By.id("article-label"));
+        element.sendKeys("shmuu4");
+        element = driver.findElement(By.id("article-author"));
         element.sendKeys("akkep");
-        element = driver.findElement(By.name("add"));
+        element = driver.findElement(By.id("article-title"));
+        element.sendKeys("shmii");
+        element = driver.findElement(By.id("article-year"));
+        element.sendKeys("2000");
+        element = driver.findElement(By.id("article-journal"));
+        element.sendKeys("A Journal");
+        element = driver.findElement(By.id("article-add"));
         element.submit();
 }
+    when 'user attempts to view an entry', {
+        element = driver.findElement(By.linkText("shmuu4"));
+        element.click();
+}
     then 'reference entry is displayed to the user', {
-        driver.getPageSource().contains("akkep").shouldBe true
+        driver.getPageSource().contains("A Journal").shouldBe true
 
 }
 }

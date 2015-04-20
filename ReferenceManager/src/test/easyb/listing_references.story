@@ -9,15 +9,20 @@ scenario "user can view a list of references", {
         driver.get("http://localhost:8080");
 }
     when 'at least one entry is in the database', {
-        element = driver.findElement(By.name("id"));
-        element.sendKeys("1");
-        element = driver.findElement(By.name("reference"));
+        element = driver.findElement(By.id("article-label"));
+        element.sendKeys("shmuu3");
+        element = driver.findElement(By.id("article-author"));
         element.sendKeys("akkep");
-        element = driver.findElement(By.name("add"));
+        element = driver.findElement(By.id("article-title"));
+        element.sendKeys("shmii");
+        element = driver.findElement(By.id("article-year"));
+        element.sendKeys("2000");
+        element = driver.findElement(By.id("article-add"));
         element.submit();
 }
     then 'a listing of references is displayed', {
-        driver.getPageSource().contains("akkep").shouldBe true
+        driver.get("http://localhost:8080/references");
+        driver.getPageSource().contains("shmuu3").shouldBe true
 }
 }
 
