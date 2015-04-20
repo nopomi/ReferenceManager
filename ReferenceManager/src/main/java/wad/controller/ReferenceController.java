@@ -58,7 +58,8 @@ public class ReferenceController {
         try {
             BibCreator bC = new BibCreator();
             String filename = bC.createBibFile(ctx, referenceService.listArticles(), referenceService.listInproceedings(), referenceService.listBooks());
-            File fileToDownload = new File(ctx.getRealPath(filename));
+	    System.out.println(filename);
+            File fileToDownload = new File("tmp/"+filename);
             InputStream inputStream = new FileInputStream(fileToDownload);
             response.setContentType("application/force-download");
             response.setHeader("Content-Disposition", "attachment; filename=" + filename);

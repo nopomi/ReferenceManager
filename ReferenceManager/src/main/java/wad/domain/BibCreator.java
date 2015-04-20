@@ -31,7 +31,7 @@ public class BibCreator {
         Parser parser = new Parser();
         try {
             path = ctx.getRealPath(fileName);
-            writer = new FileWriter(path);
+            writer = new FileWriter("tmp/"+fileName);
             for (BookReference bookRef : bookRefs) {
                 writer.append(parser.createBibTexString(bookRef));
             }
