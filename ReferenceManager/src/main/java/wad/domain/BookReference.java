@@ -22,7 +22,6 @@ public class BookReference extends AbstractPersistable<Long>{
     private String key;
 
     
-    
     public String getPublisher() {
         return publisher;
     }

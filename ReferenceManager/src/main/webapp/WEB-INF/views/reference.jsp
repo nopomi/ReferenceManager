@@ -31,25 +31,40 @@
                             Volume: ${reference.volume} <br>
                             Number: ${reference.number} <br>
                             Pages: ${reference.pages} <br>
-                            Publisher: ${reference.publisher} <br>
-                            Address: ${reference.address} <br> 
+                            Month: ${reference.month} <br>
+                            Note: ${reference.note} <br>
+                            Key: ${reference.key} <br>
+                            
                         </c:when>
                         <c:when test="${reference.type == 'BOOK'}">
-                            Id: ${reference.label} <br>
-                            Author: ${reference.author} <br>
-                            Title: ${reference.title} <br>
-                            Year: ${reference.year} <br>          
-                            Address: ${reference.address} <br>                  
-                        </c:when>
-                        <c:otherwise>
-                            Id: ${reference.label} <br>
+                            Label: ${reference.label} <br>
                             Author: ${reference.author} <br>
                             Title: ${reference.title} <br>
                             Year: ${reference.year} <br>
-                            Booktitle: ${reference.booktitle} <br> 
-                            Pages: ${reference.pages} <br>
                             Publisher: ${reference.publisher} <br>
-                            Address: ${reference.address} <br>                
+                            Volume: ${reference.volume} <br> 
+                            Series: ${reference.series} <br> 
+                            Edition: ${reference.edition} <br>
+                            Address: ${reference.address} <br> 
+                            Month: ${reference.month} <br> 
+                            Note: ${reference.note} <br> 
+                            Key: ${reference.key} <br>
+                        </c:when>
+                        <c:otherwise>
+                            Label: ${reference.label} <br>
+                            Author: ${reference.author} <br>
+                            Title: ${reference.title} <br>
+                            Year: ${reference.year} <br>
+                            Editor: ${reference.editor} <br>
+                            Volume: ${reference.volume} <br> 
+                            Series: ${reference.series} <br> 
+                            Pages: ${reference.pages} <br>
+                            Address: ${reference.address} <br> 
+                            Month: ${reference.month} <br> 
+                            Organization: ${reference.organization} <br> 
+                            Publisher: ${reference.publisher} <br> 
+                            Note: ${reference.note} <br> 
+                            Key: ${reference.key} <br> 
                         </c:otherwise>
                     </c:choose>
 

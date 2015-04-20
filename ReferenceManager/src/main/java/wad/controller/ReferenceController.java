@@ -1,11 +1,12 @@
 package wad.controller;
 
-import static com.sun.xml.internal.ws.spi.db.BindingContextFactory.LOGGER;
+
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.InputStream;
+import java.util.List;
 import java.util.Scanner;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
@@ -16,6 +17,9 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import wad.domain.ArticleReference;
+import wad.domain.BookReference;
+import wad.domain.InproceedingsReference;
 import wad.domain.bibtex.BibCreator;
 import wad.repository.ArticleRepository;
 import wad.repository.BookRepository;
@@ -47,7 +51,7 @@ public class ReferenceController {
     }
     
     @RequestMapping(value = "/download", method = RequestMethod.GET)
-    public void getLogFile(HttpSession session,HttpServletResponse response) throws Exception {
+    public void getLogFile(HttpSession session, HttpServletResponse response) throws Exception {
     try {
         BibCreator bC = new BibCreator();
         String filename = bC.createBibFile();
@@ -63,17 +67,20 @@ public class ReferenceController {
     }
     }
     
-    @RequestMapping(value = "/{id}", method = RequestMethod.GET)
-    public String view(Model model, @PathVariable Long id) {
-        if (articleRepository.findOne(id) != null) {
-            model.addAttribute("reference", articleRepository.findOne(id));
+    @RequestMapping(value = "/{label}", method = RequestMethod.GET)
+    public String view(Model model, @PathVariable String label) {
+        List<ArticleReference> aRefs = articleRepository.findByLabel(label);
+        List<BookReference> bRefs = bookRepository.findByLabel(label);
+        List<InproceedingsReference> iRefs = inproceedingsRepository.findByLabel(label);
+        if (!aRefs.isEmpty()) {
+            model.addAttribute("reference", aRefs.get(0));
             return "/WEB-INF/views/reference.jsp";
         } 
-        else if (bookRepository.findOne(id) != null) {
-            model.addAttribute("reference", bookRepository.findOne(id));
+        else if (!bRefs.isEmpty()) {
+            model.addAttribute("reference", bRefs.get(0));
             return "/WEB-INF/views/reference.jsp";
         } else {
-            model.addAttribute("reference", inproceedingsRepository.findOne(id));
+            model.addAttribute("reference", iRefs.get(0));
             return "/WEB-INF/views/reference.jsp";            
         }
     }

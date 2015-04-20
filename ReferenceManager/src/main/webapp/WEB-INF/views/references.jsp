@@ -13,7 +13,7 @@
         <title>References</title>
     </head>
 
-   <body>
+    <body>
         <h1></h1>
         <div class="container">      
 
@@ -68,7 +68,7 @@
                                     <input class="form-control" type="text" name="title" id="title">
                                 </div>
                             </div>
-                            
+
                             <div class="form-group">
                                 <label class="col-xs-1 control-label" for="year">Year</label>     
                                 <div class="col-xs-11">  
@@ -103,15 +103,22 @@
                             </div>
 
                             <div class="form-group">
-                                <label class="col-xs-1 control-label" for="publisher">Publisher</label>                    
+                                <label class="col-xs-1 control-label" for="month">Month</label>                    
                                 <div class="col-xs-11">                                       
-                                    <input class="form-control" type="text" name="publisher" id="publisher"></div>
+                                    <input class="form-control" type="text" name="month" id="month"></div>
                             </div>
 
                             <div class="form-group">
-                                <label class="col-xs-1 control-label" for="address">Address</label> 
+                                <label class="col-xs-1 control-label" for="note">Note</label> 
                                 <div class="col-xs-11">                                       
-                                    <input class="form-control" type="text" name="address" id="address">
+                                    <input class="form-control" type="text" name="note" id="note">
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label class="col-xs-1 control-label" for="key">Key</label> 
+                                <div class="col-xs-11">                                       
+                                    <input class="form-control" type="text" name="key" id="key">
                                 </div>
                             </div>
 
@@ -162,9 +169,56 @@
                             </div>
 
                             <div class="form-group">
+                                <label for="publisher" class="col-xs-1 control-label">Publisher</label>        
+                                <div class ="col-xs-11">
+                                    <input class="form-control" type="text" name="publisher" id="publisher">
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="volume" class="col-xs-1 control-label">Volume</label>        
+                                <div class ="col-xs-11">
+                                    <input class="form-control" type="text" name="volume" id="volume">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="series" class="col-xs-1 control-label">Series</label>        
+                                <div class ="col-xs-11">
+                                    <input class="form-control" type="text" name="series" id="series">
+                                </div>
+                            </div>
+
+                            <div class="form-group">
                                 <label for="address" class="col-xs-1 control-label">Address</label>        
                                 <div class ="col-xs-11">
                                     <input class="form-control" type="text" name="address" id="address">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="edition" class="col-xs-1 control-label">Edition</label>        
+                                <div class ="col-xs-11">
+                                    <input class="form-control" type="text" name="edition" id="edition">
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="month" class="col-xs-1 control-label">Month</label>        
+                                <div class ="col-xs-11">
+                                    <input class="form-control" type="text" name="month" id="month">
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="note" class="col-xs-1 control-label">Note</label>        
+                                <div class ="col-xs-11">
+                                    <input class="form-control" type="text" name="note" id="note">
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="key" class="col-xs-1 control-label">Key</label>        
+                                <div class ="col-xs-11">
+                                    <input class="form-control" type="text" name="key" id="key">
                                 </div>
                             </div>
 
@@ -185,58 +239,99 @@
                         <form class="form-horizontal" role="form" action="/inproceedings" method="POST" >
 
                             <div class="form-group">
-                                <label class="col-xs-1 control-label" for="label">Label</label>
+                                <label for="label" class="col-xs-1 control-label">Label</label>
                                 <div class ="col-xs-11">
                                     <input class="form-control" type="text" id ="label" name="label">
                                 </div>
                             </div>
 
                             <div class="form-group">
-                                <label for="author" class="col-xs-1 control-label">Author</label>
+                                <label for="author" class="col-xs-1 control-label">Author</label>   
                                 <div class ="col-xs-11">
                                     <input class="form-control" type="text" name="author" id="author">
                                 </div>
                             </div>
 
                             <div class="form-group">
-                                <label for="title" class="col-xs-1 control-label">Title</label>
+                                <label for="title" class="col-xs-1 control-label">Title</label>    
                                 <div class ="col-xs-11">
                                     <input class="form-control" type="text" name="title" id="title">
                                 </div>
                             </div>
 
                             <div class="form-group">
-                                <label for="booktitle" class="col-xs-1 control-label">Booktitle</label>
-                                <div class ="col-xs-11">
-                                    <input class="form-control" type="text" name="booktitle" id="booktitle">
-                                </div>
-                            </div>
-
-                            <div class="form-group">
-                                <label for="year" class="col-xs-1 control-label">Year</label> 
+                                <label for="year" class="col-xs-1 control-label">Year</label>   
                                 <div class ="col-xs-11">
                                     <input class="form-control" type="text" name="year" id="year">
                                 </div>
                             </div>
 
                             <div class="form-group">
-                                <label for="pages" class="col-xs-1 control-label">Pages</label>               
+                                <label for="editor" class="col-xs-1 control-label">Editor</label>        
                                 <div class ="col-xs-11">
+                                    <input class="form-control" type="text" name="editor" id="editor">
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="volume" class="col-xs-1 control-label">Volume</label>        
+                                <div class ="col-xs-11">
+                                    <input class="form-control" type="text" name="volume" id="volume">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="series" class="col-xs-1 control-label">Series</label>        
+                                <div class ="col-xs-11">
+                                    <input class="form-control" type="text" name="series" id="series">
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="pages" class="col-xs-1 control-label">Pages</label>
+                                <div class="col-xs-11">
                                     <input class="form-control" type="text" name="pages" id="pages">
                                 </div>
                             </div>
 
                             <div class="form-group">
-                                <label for="publisher" class="col-xs-1 control-label">Publisher</label>  
+                                <label for="address" class="col-xs-1 control-label">Address</label>        
+                                <div class ="col-xs-11">
+                                    <input class="form-control" type="text" name="address" id="address">
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="month" class="col-xs-1 control-label">Month</label>        
+                                <div class ="col-xs-11">
+                                    <input class="form-control" type="text" name="month" id="month">
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="organization" class="col-xs-1 control-label">Organization</label>        
+                                <div class ="col-xs-11">
+                                    <input class="form-control" type="text" name="organization" id="organization">
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="publisher" class="col-xs-1 control-label">Publisher</label>        
                                 <div class ="col-xs-11">
                                     <input class="form-control" type="text" name="publisher" id="publisher">
                                 </div>
                             </div>
 
                             <div class="form-group">
-                                <label for="address" class="col-xs-1 control-label">Address</label>  
+                                <label for="note" class="col-xs-1 control-label">Note</label>        
                                 <div class ="col-xs-11">
-                                    <input class="form-control" type="text" name="address" id="address">
+                                    <input class="form-control" type="text" name="note" id="note">
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="key" class="col-xs-1 control-label">Key</label>        
+                                <div class ="col-xs-11">
+                                    <input class="form-control" type="text" name="key" id="key">
                                 </div>
                             </div>
 
@@ -266,17 +361,17 @@
                                 <c:when test="${not empty articles or not empty books or not empty inps}">
                                     <c:forEach var="article" items="${articles}">
                                         <tr>
-                                            <td><a href="/reference?id=${article.label}">${article.label}</td>
+                                            <td><a href="/references/${article.label}">${article.label}</td>
                                             <td>${article.author}</td>
                                             <td>${article.title}</td>
                                             <td>${article.year}</td>
 
                                         </tr>
                                     </c:forEach>
-                                    
+
                                     <c:forEach var="book" items="${books}">
                                         <tr>
-                                            <td><a href="/reference?id=${book.label}">${book.label}</td>
+                                            <td><a href="/references/${book.label}">${book.label}</td>
                                             <td>${book.author}</td>
                                             <td>${book.title}</td>
                                             <td>${book.year}</td>
@@ -285,7 +380,7 @@
                                     </c:forEach>
                                     <c:forEach var="inp" items="${inps}">
                                         <tr>
-                                            <td><a href="/reference?id=${inp.label}">${inp.label}</td>
+                                            <td><a href="/references/${inp.label}">${inp.label}</td>
                                             <td>${inp.author}</td>
                                             <td>${inp.title}</td>
                                             <td>${inp.year}</td>
