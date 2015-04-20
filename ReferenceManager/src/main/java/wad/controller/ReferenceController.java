@@ -1,6 +1,5 @@
 package wad.controller;
 
-
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
@@ -8,6 +7,7 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.util.List;
 import java.util.Scanner;
+import javax.servlet.ServletContext;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import org.apache.tomcat.util.http.fileupload.IOUtils;
@@ -20,7 +20,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import wad.domain.ArticleReference;
 import wad.domain.BookReference;
 import wad.domain.InproceedingsReference;
-import wad.domain.bibtex.BibCreator;
+import wad.domain.BibCreator;
 import wad.repository.ArticleRepository;
 import wad.repository.BookRepository;
 import wad.repository.InproceedingsRepository;
@@ -32,15 +32,18 @@ public class ReferenceController {
 
     @Autowired
     private ReferenceService referenceService;
-    
+
     @Autowired
     private BookRepository bookRepository;
-    
+
     @Autowired
     private InproceedingsRepository inproceedingsRepository;
-    
+
     @Autowired
     private ArticleRepository articleRepository;
+
+    @Autowired
+    private ServletContext ctx;
 
     @RequestMapping(method = RequestMethod.GET)
     public String list(Model model) {
@@ -49,24 +52,24 @@ public class ReferenceController {
         model.addAttribute("inps", referenceService.listInproceedings());
         return "/WEB-INF/views/references.jsp";
     }
-    
+
     @RequestMapping(value = "/download", method = RequestMethod.GET)
-    public void getLogFile(HttpSession session, HttpServletResponse response) throws Exception {
-    try {
-        BibCreator bC = new BibCreator();
-        String filename = bC.createBibFile();
-        File fileToDownload = new File(filename);
-        InputStream inputStream = new FileInputStream(fileToDownload);
-        response.setContentType("application/force-download");
-        response.setHeader("Content-Disposition", "attachment; filename="+ filename); 
-        IOUtils.copy(inputStream, response.getOutputStream());
-        response.flushBuffer();
-        inputStream.close();
-    } catch (Exception e){
-        System.out.println("Request could not be completed at this moment. Please try again.");
+    public void getLogFile(HttpSession session, HttpServletResponse response) {
+        try {
+            BibCreator bC = new BibCreator();
+            String filename = bC.createBibFile(ctx, referenceService.listArticles(), referenceService.listInproceedings(), referenceService.listBooks());
+            File fileToDownload = new File(ctx.getRealPath(filename));
+            InputStream inputStream = new FileInputStream(fileToDownload);
+            response.setContentType("application/force-download");
+            response.setHeader("Content-Disposition", "attachment; filename=" + filename);
+            IOUtils.copy(inputStream, response.getOutputStream());
+            response.flushBuffer();
+            inputStream.close();
+        } catch (Exception e) {
+            System.out.println("Request could not be completed at this moment. Please try again.");
+        }
     }
-    }
-    
+
     @RequestMapping(value = "/{label}", method = RequestMethod.GET)
     public String view(Model model, @PathVariable String label) {
         List<ArticleReference> aRefs = articleRepository.findByLabel(label);
@@ -75,13 +78,12 @@ public class ReferenceController {
         if (!aRefs.isEmpty()) {
             model.addAttribute("reference", aRefs.get(0));
             return "/WEB-INF/views/reference.jsp";
-        } 
-        else if (!bRefs.isEmpty()) {
+        } else if (!bRefs.isEmpty()) {
             model.addAttribute("reference", bRefs.get(0));
             return "/WEB-INF/views/reference.jsp";
         } else {
             model.addAttribute("reference", iRefs.get(0));
-            return "/WEB-INF/views/reference.jsp";            
+            return "/WEB-INF/views/reference.jsp";
         }
     }
 

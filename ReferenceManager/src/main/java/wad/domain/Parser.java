@@ -1,4 +1,4 @@
-package wad.domain.bibtex;
+package wad.domain;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import wad.domain.ArticleReference;
