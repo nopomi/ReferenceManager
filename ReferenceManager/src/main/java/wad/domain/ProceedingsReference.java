@@ -1,25 +1,23 @@
-
 package wad.domain;
 
 import javax.persistence.Entity;
 import org.springframework.data.jpa.domain.AbstractPersistable;
 
 @Entity
-public class InproceedingsReference extends AbstractPersistable<Long>{
+public class ProceedingsReference extends AbstractPersistable<Long> {
     
     private ReferenceType type;
     private String label;
-    private String author;
     private String title;
     private int year; 
     private String editor;
     private String volume;
+    private String number;
     private String series;
-    private String pages;
     private String address;
     private String month;
-    private String organization;
     private String publisher;
+    private String organization;
     private String note;
     private String key;
 
@@ -39,14 +37,6 @@ public class InproceedingsReference extends AbstractPersistable<Long>{
         this.label = label;
     }
 
-    public String getAuthor() {
-        return author;
-    }
-
-    public void setAuthor(String author) {
-        this.author = author;
-    }
-
     public String getTitle() {
         return title;
     }
@@ -62,8 +52,6 @@ public class InproceedingsReference extends AbstractPersistable<Long>{
     public void setYear(int year) {
         this.year = year;
     }
-    
-    
 
     public String getEditor() {
         return editor;
@@ -81,20 +69,20 @@ public class InproceedingsReference extends AbstractPersistable<Long>{
         this.volume = volume;
     }
 
+    public String getNumber() {
+        return number;
+    }
+
+    public void setNumber(String number) {
+        this.number = number;
+    }
+
     public String getSeries() {
         return series;
     }
 
     public void setSeries(String series) {
         this.series = series;
-    }
-
-    public String getPages() {
-        return pages;
-    }
-
-    public void setPages(String pages) {
-        this.pages = pages;
     }
 
     public String getAddress() {
@@ -113,20 +101,20 @@ public class InproceedingsReference extends AbstractPersistable<Long>{
         this.month = month;
     }
 
-    public String getOrganization() {
-        return organization;
-    }
-
-    public void setOrganization(String organization) {
-        this.organization = organization;
-    }
-
     public String getPublisher() {
         return publisher;
     }
 
     public void setPublisher(String publisher) {
         this.publisher = publisher;
+    }
+
+    public String getOrganization() {
+        return organization;
+    }
+
+    public void setOrganization(String organization) {
+        this.organization = organization;
     }
 
     public String getNote() {
@@ -143,5 +131,5 @@ public class InproceedingsReference extends AbstractPersistable<Long>{
 
     public void setKey(String key) {
         this.key = key;
-    }  
+    }
 }

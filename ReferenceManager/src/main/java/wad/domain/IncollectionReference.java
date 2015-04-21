@@ -1,25 +1,28 @@
-
 package wad.domain;
 
 import javax.persistence.Entity;
 import org.springframework.data.jpa.domain.AbstractPersistable;
 
 @Entity
-public class InproceedingsReference extends AbstractPersistable<Long>{
-    
+public class IncollectionReference extends AbstractPersistable<Long>{
+
     private ReferenceType type;
     private String label;
     private String author;
     private String title;
+    private String booktitle;
+    private String publisher;
     private int year; 
     private String editor;
     private String volume;
+    private String number;
     private String series;
+    private String incollectiontype;
+    private String chapter;
     private String pages;
     private String address;
+    private String edition;
     private String month;
-    private String organization;
-    private String publisher;
     private String note;
     private String key;
 
@@ -55,6 +58,22 @@ public class InproceedingsReference extends AbstractPersistable<Long>{
         this.title = title;
     }
 
+    public String getBooktitle() {
+        return booktitle;
+    }
+
+    public void setBooktitle(String booktitle) {
+        this.booktitle = booktitle;
+    }
+
+    public String getPublisher() {
+        return publisher;
+    }
+
+    public void setPublisher(String publisher) {
+        this.publisher = publisher;
+    }
+
     public int getYear() {
         return year;
     }
@@ -62,8 +81,6 @@ public class InproceedingsReference extends AbstractPersistable<Long>{
     public void setYear(int year) {
         this.year = year;
     }
-    
-    
 
     public String getEditor() {
         return editor;
@@ -81,12 +98,36 @@ public class InproceedingsReference extends AbstractPersistable<Long>{
         this.volume = volume;
     }
 
+    public String getNumber() {
+        return number;
+    }
+
+    public void setNumber(String number) {
+        this.number = number;
+    }
+
     public String getSeries() {
         return series;
     }
 
     public void setSeries(String series) {
         this.series = series;
+    }
+
+    public String getIncollectiontype() {
+        return incollectiontype;
+    }
+
+    public void setIncollectiontype(String incollectiontype) {
+        this.incollectiontype = incollectiontype;
+    }
+
+    public String getChapter() {
+        return chapter;
+    }
+
+    public void setChapter(String chapter) {
+        this.chapter = chapter;
     }
 
     public String getPages() {
@@ -105,28 +146,20 @@ public class InproceedingsReference extends AbstractPersistable<Long>{
         this.address = address;
     }
 
+    public String getEdition() {
+        return edition;
+    }
+
+    public void setEdition(String edition) {
+        this.edition = edition;
+    }
+
     public String getMonth() {
         return month;
     }
 
     public void setMonth(String month) {
         this.month = month;
-    }
-
-    public String getOrganization() {
-        return organization;
-    }
-
-    public void setOrganization(String organization) {
-        this.organization = organization;
-    }
-
-    public String getPublisher() {
-        return publisher;
-    }
-
-    public void setPublisher(String publisher) {
-        this.publisher = publisher;
     }
 
     public String getNote() {
@@ -143,5 +176,5 @@ public class InproceedingsReference extends AbstractPersistable<Long>{
 
     public void setKey(String key) {
         this.key = key;
-    }  
+    }
 }

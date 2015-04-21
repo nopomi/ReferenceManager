@@ -5,5 +5,16 @@ package wad.domain;
 public enum ReferenceType {
     ARTICLE,
     BOOK,
-    INPROCEEDINGS
+    INPROCEEDINGS,
+    BOOKLET,
+    CONFERENCE,
+    INBOOK,
+    INCOLLECTION,
+    MANUAL,
+    MASTERSTHESIS,
+    MISC,
+    PHDTHESIS,
+    PROCEEDINGS,
+    TECHREPORT,
+    UNPUBLISHED
 }
