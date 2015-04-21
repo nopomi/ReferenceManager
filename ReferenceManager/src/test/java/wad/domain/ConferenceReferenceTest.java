@@ -7,19 +7,19 @@ import org.junit.BeforeClass;
 import org.junit.Test;
 import static org.junit.Assert.*;
 
-public class InproceedingsReferenceTest {
+public class ConferenceReferenceTest {
     
-        private InproceedingsReference reference;
+        private ConferenceReference reference;
     
     @Before
     public void setUp() {
-        reference = new InproceedingsReference();
+        reference = new ConferenceReference();
     }
     
-        @Test
+    @Test
     public void gettersAndSettersWork() {
-        reference.setType(ReferenceType.INPROCEEDINGS);
-        assertEquals(reference.getType(), ReferenceType.INPROCEEDINGS);
+        reference.setType(ReferenceType.CONFERENCE);
+        assertEquals(reference.getType(), ReferenceType.CONFERENCE);
         
         reference.setLabel("KRD13");
         assertEquals(reference.getLabel(), "KRD13");

@@ -7,19 +7,19 @@ import org.junit.BeforeClass;
 import org.junit.Test;
 import static org.junit.Assert.*;
 
-public class InproceedingsReferenceTest {
+public class TechreportReferenceTest {
     
-        private InproceedingsReference reference;
+    private TechreportReference reference;
     
     @Before
     public void setUp() {
-        reference = new InproceedingsReference();
+        reference = new TechreportReference();
     }
     
-        @Test
+    @Test
     public void gettersAndSettersWork() {
-        reference.setType(ReferenceType.INPROCEEDINGS);
-        assertEquals(reference.getType(), ReferenceType.INPROCEEDINGS);
+        reference.setType(ReferenceType.TECHREPORT);
+        assertEquals(reference.getType(), ReferenceType.TECHREPORT);
         
         reference.setLabel("KRD13");
         assertEquals(reference.getLabel(), "KRD13");
@@ -27,35 +27,26 @@ public class InproceedingsReferenceTest {
         reference.setAuthor("Keijo");
         assertEquals(reference.getAuthor(), "Keijo");
         
-        reference.setEditor("Keijon kaveri");
-        assertEquals(reference.getEditor(), "Keijon kaveri");
-        
         reference.setTitle("Book of Greatness");
         assertEquals(reference.getTitle(), "Book of Greatness");
+        
+        reference.setInstitution("Royal Institution of Great Britain");
+        assertEquals(reference.getInstitution(), "Royal Institution of Great Britain");
         
         reference.setYear(2014);
         assertEquals(reference.getYear(), 2014);
         
-        reference.setPublisher("Pearson");
-        assertEquals(reference.getPublisher(), "Pearson");
+        reference.setTechreporttype("Dissertation");
+        assertEquals(reference.getTechreporttype(), "Dissertation");
         
-        reference.setVolume("3rd");
-        assertEquals(reference.getVolume(), "3rd");
-        
-        reference.setSeries("Series");
-        assertEquals(reference.getSeries(), "Series");
-        
-        reference.setPages("200-300");
-        assertEquals(reference.getPages(), "200-300");
-        
+        reference.setNumber("3");
+        assertEquals(reference.getNumber(), "3");
+                
         reference.setAddress("DowningStreet");
         assertEquals(reference.getAddress(), "DowningStreet");
-        
-        reference.setOrganization("ABB");
-        assertEquals(reference.getOrganization(), "ABB");
-        
+                
         reference.setMonth("august");
-        assertEquals(reference.getMonth(), "august");
+        assertEquals(reference.getMonth(), "august");   
         
         reference.setNote("note");
         assertEquals(reference.getNote(), "note");
@@ -63,5 +54,4 @@ public class InproceedingsReferenceTest {
         reference.setKey("avain");
         assertEquals(reference.getKey(), "avain");
     } 
-    
 }
