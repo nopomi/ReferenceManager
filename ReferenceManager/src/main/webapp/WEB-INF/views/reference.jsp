@@ -11,69 +11,76 @@
 
         <title>Reference</title>
     </head>
-    <body>
+    <body onload="javascript:disableForm()">
         <h1></h1>
-
 
         <div class="container">
 
-            <div class="panel panel-default">
-                <div class="panel-heading"><h4 class="panel-title">${reference.title}</h4></div>
-                <div class="panel-body">   
+            <c:choose>
+                <c:when test="${reference.type == 'ARTICLE'}">
+                    <jsp:include page="articleForm.jsp" >   
+                        <jsp:param name="articlepath" value="article/update" />
+                    </jsp:include>
+                </c:when>
+                
+                <c:when test="${reference.type == 'BOOK'}">
+                    <jsp:include page="bookForm.jsp" >   
+                        <jsp:param name="bookpath" value="book/update" />
+                    </jsp:include>
+                </c:when>
+                
+                <c:when test="${reference.type == 'INPROCEEDINGS'}">
+                    <jsp:include page="inproceedingsForm.jsp" >   
+                        <jsp:param name="inproceedingspath" value="inproceedings/update" />
+                    </jsp:include>                 
+                </c:when>
+                
+                
+                <%--<c:when test="${reference.type == 'CONFERENCE'}">--%>
+                    <%--<jsp:include page="conferenceForm.jsp" >--%>   
+                        <%--<jsp:param name="conferencepath" value="conference/update" />--%>
+                    <%--</jsp:include>--%>
+                <%--</c:when>--%>
+                
+                <%--<c:when test="${reference.type == 'INCOLLECTION'}">--%>
+                    <%--<jsp:include page="incollectionForm.jsp" >--%>   
+                        <%--<jsp:param name="incollectionpath" value="incollection/update" />--%>
+                    <%--</jsp:include>--%>
+                <%--</c:when>--%>
+                
+                <c:otherwise>
+                    <jsp:include page="bookletForm.jsp" >   
+                        <jsp:param name="bookletpath" value="booklet/update" />
+                    </jsp:include>
+                </c:otherwise>
+            </c:choose>
 
-                    <c:choose>
-                        <c:when test="${reference.type == 'ARTICLE'}">
-                            Label: ${reference.label} <br>
-                            Author: ${reference.author} <br>
-                            Title: ${reference.title} <br>
-                            Year: ${reference.year} <br>
-                            Journal: ${reference.journal} <br>
-                            Volume: ${reference.volume} <br>
-                            Number: ${reference.number} <br>
-                            Pages: ${reference.pages} <br>
-                            Month: ${reference.month} <br>
-                            Note: ${reference.note} <br>
-                            Key: ${reference.key} <br>
-                            
-                        </c:when>
-                        <c:when test="${reference.type == 'BOOK'}">
-                            Label: ${reference.label} <br>
-                            Author: ${reference.author} <br>
-                            Title: ${reference.title} <br>
-                            Year: ${reference.year} <br>
-                            Publisher: ${reference.publisher} <br>
-                            Volume: ${reference.volume} <br> 
-                            Series: ${reference.series} <br> 
-                            Edition: ${reference.edition} <br>
-                            Address: ${reference.address} <br> 
-                            Month: ${reference.month} <br> 
-                            Note: ${reference.note} <br> 
-                            Key: ${reference.key} <br>
-                        </c:when>
-                        <c:otherwise>
-                            Label: ${reference.label} <br>
-                            Author: ${reference.author} <br>
-                            Title: ${reference.title} <br>
-                            Year: ${reference.year} <br>
-                            Editor: ${reference.editor} <br>
-                            Volume: ${reference.volume} <br> 
-                            Series: ${reference.series} <br> 
-                            Pages: ${reference.pages} <br>
-                            Address: ${reference.address} <br> 
-                            Month: ${reference.month} <br> 
-                            Organization: ${reference.organization} <br> 
-                            Publisher: ${reference.publisher} <br> 
-                            Note: ${reference.note} <br> 
-                            Key: ${reference.key} <br> 
-                        </c:otherwise>
-                    </c:choose>
-
-                </div>
-            </div>
+            <button class="btn btn-default" onclick="undisableForm()">Edit</button>
+            <a class="btn btn-danger" href="/references/delete/${reference.label}">Delete</a>
         </div>
+    </div>
+</div>
 
-        <!--javascript source-->
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-        <script src="../../js/bootstrap.js" type="text/javascript"></script>
-    </body>
+<!--javascript-->
+<script>
+    function disableForm() {
+        var form = document.getElementById("referenceForm");
+        var elements = form.elements;
+        for (var i = 0, len = elements.length; i < len; ++i) {
+            elements[i].disabled = true;
+        }
+    }
+</script>
+
+<script>
+    function undisableForm() {
+        var form = document.getElementById("referenceForm");
+        var elements = form.elements;
+        for (var i = 0, len = elements.length; i < len; ++i) {
+            elements[i].disabled = false;
+        }
+    }
+</script>
+
+</body>
 </html>

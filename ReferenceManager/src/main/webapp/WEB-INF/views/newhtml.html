@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="../../css/bootstrap.css" rel="stylesheet" type="text/css"/>
+        <link href="../../css/bootstrap-theme.css" rel="stylesheet" type="text/css"/>
+
+        <title>References</title>
+    </head>
+
+    <body>
+        <h1></h1>
+        <div class="container">      
+
+
+
+            <!--buttons to open reference form-->
+
+            <div role="tabpanel">
+                <ul class="nav nav-tabs" role="tablist">
+                    <li role="presentation"><a href="#articleReference" aria-controls="articleReference" role="tab" data-toggle="tab">New article reference</a></li>
+                    <li role="presentation"><a href="#bookReference" aria-controls="bookReference" role="tab" data-toggle="tab">New book reference</a></li>
+                </ul>
+
+                <!-- Nav tabs -->
+
+
+
+
+                <!--article reference form-->
+
+                <div class="tab-content">
+
+                    <div role="tabpanel" class="tab-pane" id="articleReference">
+
+                        <div class="panel panel-default">
+                            <div class="panel-heading">
+                                <h4 class="panel-title">New Article Reference</h4>
+                            </div> 
+
+                            <div class="panel-body">
+                                <form class="form-horizontal" role="form" action="/article" method="POST" >
+
+                                    <div class="form-group">
+                                        <label class="col-xs-1 control-label" for="key">Key</label> 
+                                        <div class="col-xs-11">                                       
+                                            <input class="form-control" type="text" name="key" id="key">
+                                        </div>
+                                    </div>
+
+                                    <button type="submit" id="article-add" class="btn btn-default">Add reference</button>
+
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!--book reference form-->
+
+                    <div role="tabpanel" class="tab-pane" id="bookReference">
+
+                        <div class="panel panel-default">
+                            <div class="panel-heading">
+                                <h4 class="panel-title">New Book Reference</h4>
+                            </div>
+
+                            <div class="panel-body">
+                                <form class="form-horizontal" role="form" action="/book" method="POST" >
+
+                                    <div class="form-group">
+                                        <label class="col-xs-1 control-label" for="label">Label</label>
+                                        <div class ="col-xs-11">
+                                            <input class="form-control" type="text" id ="book-label" name="label">
+                                        </div>
+                                    </div>
+
+
+                                    <button type="submit" id="book-add" class="btn btn-default">Add reference</button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+
+
+
+            <!--all references in list-->
+            <%@ include file="allReferences.jsp" %>
+
+        </div>
+
+
+
+        <!--javascript source-->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+        <script src="../../js/bootstrap.js" type="text/javascript"></script>
+    </body>
+</html>

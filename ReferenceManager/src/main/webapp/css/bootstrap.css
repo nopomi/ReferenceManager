@@ -2393,9 +2393,10 @@ output {
 .form-control[disabled],
 .form-control[readonly],
 fieldset[disabled] .form-control {
-    cursor: not-allowed;
-    background-color: #eee;
-    opacity: 1;
+    /*cursor: not-allowed;*/
+    color: #000;
+/*    background-color: #eee;*/
+    /*opacity: 1;*/
 }
 textarea.form-control {
     height: auto;
@@ -4964,7 +4965,7 @@ a.list-group-item:focus {
 .list-group-item.disabled,
 .list-group-item.disabled:hover,
 .list-group-item.disabled:focus {
-    color: #777;
+    /*color: #777;*/
     cursor: not-allowed;
     background-color: #eee;
 }
@@ -4976,7 +4977,7 @@ a.list-group-item:focus {
 .list-group-item.disabled .list-group-item-text,
 .list-group-item.disabled:hover .list-group-item-text,
 .list-group-item.disabled:focus .list-group-item-text {
-    color: #777;
+    /*color: #777;*/
 }
 .list-group-item.active,
 .list-group-item.active:hover,
