@@ -10,7 +10,7 @@
             <div class="form-group">
                 <label class="col-xs-1 control-label" for="label">Label</label>
                 <div class ="col-xs-11">
-                    <input class="form-control" type="text" id ="article-label" name="label" value="${reference.label}">
+                    <input class="form-control" type="text" id ="label" name="label" value="${reference.label}">
                 </div>
             </div>
             <div class="form-group">
@@ -74,7 +74,7 @@
                 </div>
             </div>
 
-            <button type="submit" id="book-add" class="btn btn-default">Add reference</button>
+            <button type="submit" id="add" class="btn btn-default">Add reference</button>
 
         </form>
     </div>

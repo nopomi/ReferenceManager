@@ -8,7 +8,7 @@
             <div class="form-group">
                 <label class="col-xs-1 control-label" for="label">Label</label>
                 <div class ="col-xs-11">
-                    <input class="form-control" type="text" id ="book-label" name="label" value="${reference.label}">
+                    <input class="form-control" type="text" id ="label" name="label" value="${reference.label}">
                 </div>
             </div>
 
@@ -36,7 +36,7 @@
             <div class="form-group">
                 <label for="publisher" class="col-xs-1 control-label">Publisher</label>        
                 <div class ="col-xs-11">
-                    <input class="form-control" type="text" name="publisher" id="book-publisher" value="${reference.year}">
+                    <input class="form-control" type="text" name="publisher" id="book-publisher" value="${reference.publisher}">
                 </div>
             </div>
 
@@ -49,7 +49,7 @@
             <div class="form-group">
                 <label for="series" class="col-xs-1 control-label">Series</label>        
                 <div class ="col-xs-11">
-                    <input class="form-control" type="text" name="series" id="series" value="${reference.year}">
+                    <input class="form-control" type="text" name="series" id="series" value="${reference.series}">
                 </div>
             </div>
 
@@ -87,7 +87,7 @@
                 </div>
             </div>
 
-            <button type="submit" id="book-add" class="btn btn-default">Add reference</button>
+            <button type="submit" id="add" class="btn btn-default">Add reference</button>
         </form>
     </div>
 </div>

@@ -3,8 +3,10 @@
     <div class="panel-body">
         <table class="table table-striped">  
             <thead>                          
-                <tr>                               
+                <tr>       
                     <th>Label</th>
+                    <th>Type</th>
+
                     <th>Author</th>
                     <th>Title</th>
                     <th>Year</th>
@@ -16,6 +18,8 @@
                     <c:forEach var="article" items="${articles}">
                         <tr>
                             <td><a href="/references/${article.label}">${article.label}</td>
+                            <td>Article</td>
+
                             <td>${article.author}</td>
                             <td>${article.title}</td>
                             <td>${article.year}</td>
@@ -25,6 +29,8 @@
                     <c:forEach var="book" items="${books}">
                         <tr>
                             <td><a href="/references/${book.label}">${book.label}</td>
+                            <td>Book</td>
+
                             <td>${book.author}</td>
                             <td>${book.title}</td>
                             <td>${book.year}</td>
@@ -34,6 +40,8 @@
                     <c:forEach var="inp" items="${inps}">
                         <tr>
                             <td><a href="/references/${inp.label}">${inp.label}</td>
+                            <td>Inproceedings</td>
+
                             <td>${inp.author}</td>
                             <td>${inp.title}</td>
                             <td>${inp.year}</td>
@@ -44,6 +52,7 @@
                 <c:otherwise>
                     <tr>
                         <td>No references yet!</a</td>
+                        <td></td>
                         <td></td>
                         <td></td>
                         <td></td>
