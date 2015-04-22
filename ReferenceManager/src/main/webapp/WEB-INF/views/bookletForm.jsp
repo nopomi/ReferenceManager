@@ -3,7 +3,7 @@
         <h4 class="panel-title">Booklet Reference</h4>
     </div>
     <div class="panel-body">
-        <form class="form-horizontal" role="form" action=${param.bookletpath} method="POST" >
+        <form class="form-horizontal" role="form" id="referenceForm" action=${param.bookletpath} method="POST" >
 
             <div class="form-group">
                 <label for="label" class="col-xs-1 control-label">Label</label>

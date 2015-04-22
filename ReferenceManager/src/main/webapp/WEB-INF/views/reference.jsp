@@ -19,38 +19,38 @@
             <c:choose>
                 <c:when test="${reference.type == 'ARTICLE'}">
                     <jsp:include page="articleForm.jsp" >   
-                        <jsp:param name="articlepath" value="article/update" />
+                        <jsp:param name="articlepath" value="/article/update" />
                     </jsp:include>
                 </c:when>
                 
                 <c:when test="${reference.type == 'BOOK'}">
                     <jsp:include page="bookForm.jsp" >   
-                        <jsp:param name="bookpath" value="book/update" />
+                        <jsp:param name="bookpath" value="/book/update" />
                     </jsp:include>
                 </c:when>
                 
                 <c:when test="${reference.type == 'INPROCEEDINGS'}">
                     <jsp:include page="inproceedingsForm.jsp" >   
-                        <jsp:param name="inproceedingspath" value="inproceedings/update" />
+                        <jsp:param name="inproceedingspath" value="/inproceedings/update" />
                     </jsp:include>                 
                 </c:when>
                 
                 
                 <%--<c:when test="${reference.type == 'CONFERENCE'}">--%>
                     <%--<jsp:include page="conferenceForm.jsp" >--%>   
-                        <%--<jsp:param name="conferencepath" value="conference/update" />--%>
+                        <%--<jsp:param name="conferencepath" value="/conference/update" />--%>
                     <%--</jsp:include>--%>
                 <%--</c:when>--%>
                 
                 <%--<c:when test="${reference.type == 'INCOLLECTION'}">--%>
                     <%--<jsp:include page="incollectionForm.jsp" >--%>   
-                        <%--<jsp:param name="incollectionpath" value="incollection/update" />--%>
+                        <%--<jsp:param name="incollectionpath" value="/incollection/update" />--%>
                     <%--</jsp:include>--%>
                 <%--</c:when>--%>
                 
                 <c:otherwise>
                     <jsp:include page="bookletForm.jsp" >   
-                        <jsp:param name="bookletpath" value="booklet/update" />
+                        <jsp:param name="bookletpath" value="/booklet/update" />
                     </jsp:include>
                 </c:otherwise>
             </c:choose>

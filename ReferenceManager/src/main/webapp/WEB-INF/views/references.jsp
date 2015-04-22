@@ -37,37 +37,37 @@
 
                 <div role="tabpanel" class="tab-pane active" id="articleReference">
                     <jsp:include page="articleForm.jsp" >   
-                        <jsp:param name="articlepath" value="article" />
+                        <jsp:param name="articlepath" value="/article" />
                     </jsp:include>
                 </div>
 
                 <div role="tabpanel" class="tab-pane" id="bookReference">
                     <jsp:include page="bookForm.jsp" >   
-                        <jsp:param name="bookpath" value="book" />
+                        <jsp:param name="bookpath" value="/book" />
                     </jsp:include>
                 </div>
 
                 <div role="tabpanel" class="tab-pane" id="inproceedingsReference">  
                     <jsp:include page="inproceedingsForm.jsp" >   
-                        <jsp:param name="inproceedingspath" value="inproceedings" />
+                        <jsp:param name="inproceedingspath" value="/inproceedings" />
                     </jsp:include>
                 </div>
 
                 <div role="tabpanel" class="tab-pane" id="conferenceReference">
                     <jsp:include page="conferenceForm.jsp" >   
-                        <jsp:param name="conferencepath" value="conference" />
+                        <jsp:param name="conferencepath" value="/conference" />
                     </jsp:include>
                 </div>
 
                 <div role="tabpanel" class="tab-pane" id="inCollectionReference">
                     <jsp:include page="incollectionForm.jsp" >   
-                        <jsp:param name="incollectionpath" value="incollection" />
+                        <jsp:param name="incollectionpath" value="/incollection" />
                     </jsp:include>
                 </div>
 
                 <div role="tabpanel" class="tab-pane" id="bookletReference">
                     <jsp:include page="bookletForm.jsp" >   
-                        <jsp:param name="bookletpath" value="booklet" />
+                        <jsp:param name="bookletpath" value="/booklet" />
                     </jsp:include>
                 </div>
             </div>

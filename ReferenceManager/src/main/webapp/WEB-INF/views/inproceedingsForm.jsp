@@ -3,7 +3,7 @@
         <h4 class="panel-title">New Inproceedings Reference</h4>
     </div>
     <div class="panel-body">
-        <form class="form-horizontal" role="form" action=${param.inproceedingspath} method="POST" >
+        <form class="form-horizontal" role="form" id="referenceForm" action=${param.inproceedingspath} method="POST" >
 
             <div class="form-group">
                 <label for="label" class="col-xs-1 control-label">Label</label>
