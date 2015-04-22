@@ -2,3 +2,5 @@
 /ReferenceManager/target*
 /*~
 /ReferenceManager/.gitignore
+/ReferenceManager/src/main/webapp/*.bib
+
