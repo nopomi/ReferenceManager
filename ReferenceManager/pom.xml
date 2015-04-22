@@ -9,7 +9,6 @@
     <artifactId>ReferenceManagerDeadline</artifactId>
     <version>1.0-SNAPSHOT</version>
     <packaging>war</packaging>
-
     <name>ReferenceManager</name>
     
     <properties>
