@@ -120,7 +120,7 @@ public class ReferenceController {
     }
     
     @RequestMapping(value = "/delete/{label}", method = RequestMethod.DELETE) 
-    public void delete(@PathVariable String label) {
+    public String delete(@PathVariable String label) {
         List<ArticleReference> aRefs = articleRepository.findByLabel(label);
         List<BookReference> bRefs = bookRepository.findByLabel(label);
         List<InproceedingsReference> ipRefs = inproceedingsRepository.findByLabel(label);
@@ -129,31 +129,24 @@ public class ReferenceController {
         List<BookletReference> bookletRefs = bookletRepository.findByLabel(label);
 
         if (!bRefs.isEmpty()) {
-            BookReference book = bRefs.get(0);
-            bookRepository.delete(book);
+            bookRepository.delete(bRefs.get(0).getId());
         }
         if (!aRefs.isEmpty()) {
-            ArticleReference article = aRefs.get(0);
-            articleRepository.delete(article);
+            articleRepository.delete(aRefs.get(0).getId());
         }
         if (!ipRefs.isEmpty()) {
-            InproceedingsReference inproceedings = ipRefs.get(0);
-            inproceedingsRepository.delete(inproceedings);
+            inproceedingsRepository.delete(ipRefs.get(0).getId());
         }
         
         if (!cRefs.isEmpty()) {
-            ConferenceReference cr = cRefs.get(0);
-            conferenceRepository.delete(cr);
+            conferenceRepository.delete(cRefs.get(0).getId());
         }
         if (!aRefs.isEmpty()) {
-            IncollectionReference icr = icRefs.get(0);
-            incollectionRepository.delete(icr);
+            incollectionRepository.delete(icRefs.get(0).getId());
         }
         if (!ipRefs.isEmpty()) {
-            BookletReference booklet = bookletRefs.get(0);
-            bookletRepository.delete(booklet);
+            bookletRepository.delete(bookletRefs.get(0).getId());
         }
+        return "/WEB-INF/views/references.jsp";
     }
-
-
 }
