@@ -34,6 +34,9 @@
 
             <!--all forms in tabpanels-->
             <div class="tab-content">
+                <c:if test="${!empty message}">
+                    <p>${message}</p>
+                </c:if>
 
                 <div role="tabpanel" class="tab-pane active" id="articleReference">
                     <jsp:include page="articleForm.jsp" >   

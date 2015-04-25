@@ -6,35 +6,35 @@
         <form class="form-horizontal" role="form" id="referenceForm" action=${param.incollectionpath} method="POST" >
 
             <div class="form-group">
-                <label for="label" class="col-xs-1 control-label">Label</label>
+                <label for="label" class="col-xs-1 control-label">Label*</label>
                 <div class ="col-xs-11">
                     <input class="form-control" type="text" id ="label" name="label" value="${reference.label}">
                 </div>
             </div>
 
             <div class="form-group">
-                <label for="author" class="col-xs-1 control-label">Author</label>   
+                <label for="author" class="col-xs-1 control-label">Author*</label>   
                 <div class ="col-xs-11">
                     <input class="form-control" type="text" name="author" id="author" value="${reference.author}">
                 </div>
             </div>
 
             <div class="form-group">
-                <label for="title" class="col-xs-1 control-label">Title</label>    
+                <label for="title" class="col-xs-1 control-label">Title*</label>    
                 <div class ="col-xs-11">
                     <input class="form-control" type="text" name="title" id="title" value="${reference.title}">
                 </div>
             </div>
 
             <div class="form-group">
-                <label for="booktitle" class="col-xs-1 control-label">Booktitle</label>    
+                <label for="booktitle" class="col-xs-1 control-label">Booktitle*</label>    
                 <div class ="col-xs-11">
                     <input class="form-control" type="text" name="booktitle" id="booktitle" value="${reference.booktitle}">
                 </div>
             </div>
 
             <div class="form-group">
-                <label for="year" class="col-xs-1 control-label">Year</label>   
+                <label for="year" class="col-xs-1 control-label">Year*</label>   
                 <div class ="col-xs-11">
                     <input class="form-control" type="text" name="year" id="year" value="${reference.year}">
                 </div>
@@ -89,7 +89,7 @@
             </div>
 
             <div class="form-group">
-                <label for="publisher" class="col-xs-1 control-label">Publisher</label>        
+                <label for="publisher" class="col-xs-1 control-label">Publisher*</label>        
                 <div class ="col-xs-11">
                     <input class="form-control" type="text" name="publisher" id="publisher" value="${reference.publisher}">
                 </div>

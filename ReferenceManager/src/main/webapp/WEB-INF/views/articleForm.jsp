@@ -1,3 +1,4 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <div class="panel panel-default">
     <div class="panel-heading">
         <h4 class="panel-title">
@@ -5,40 +6,41 @@
         </h4>
     </div> 
 
-    <div class="panel-body">      
+    <div class="panel-body">
+        
         <form class="form-horizontal" id="referenceForm" role="form" action=${param.articlepath} method="POST" >                         
             <div class="form-group">
-                <label class="col-xs-1 control-label" for="label">Label</label>
+                <label class="col-xs-1 control-label" for="label">Label*</label>
                 <div class ="col-xs-11">
                     <input class="form-control" type="text" id ="label" name="label" value="${reference.label}">
                 </div>
             </div>
             <div class="form-group">
-                <label class="col-xs-1 control-label" for="author">Author</label>
+                <label class="col-xs-1 control-label" for="author">Author*</label>
                 <div class="col-xs-11">
                     <input class="form-control" type="text" name="author" id="article-author" value="${reference.author}">
                 </div>
             </div>
             <div class="form-group">
-                <label class="col-xs-1 control-label" for="title">Title</label> 
+                <label class="col-xs-1 control-label" for="title">Title*</label> 
                 <div class="col-xs-11">
                     <input class="form-control" type="text" name="title" id="article-title" value="${reference.title}">
                 </div>
             </div>
             <div class="form-group">
-                <label class="col-xs-1 control-label" for="year">Year</label>     
+                <label class="col-xs-1 control-label" for="year">Year*</label>     
                 <div class="col-xs-11">  
                     <input class="form-control" type="text" name="year" id="article-year" value="${reference.year}">
                 </div>
             </div>
             <div class="form-group">
-                <label class="col-xs-1 control-label" for="journal">Journal</label> 
+                <label class="col-xs-1 control-label" for="journal">Journal*</label> 
                 <div class="col-xs-11">
                     <input class="form-control" type="text" name="journal" id="article-journal" value="${reference.journal}">
                 </div>
             </div>
             <div class="form-group">
-                <label class="col-xs-1 control-label" for="volume">Volume</label>  
+                <label class="col-xs-1 control-label" for="volume">Volume*</label>  
                 <div class="col-xs-11">
                     <input class="form-control" type="text" name="volume" id="volume" value="${reference.volume}">
                 </div>

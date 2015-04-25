@@ -2,16 +2,22 @@
 package wad.domain;
 
 import javax.persistence.Entity;
+import javax.validation.constraints.NotNull;
+import org.hibernate.validator.constraints.NotBlank;
 import org.springframework.data.jpa.domain.AbstractPersistable;
 
 @Entity
 public class InproceedingsReference extends AbstractPersistable<Long>{
     
     private ReferenceType type;
+    @NotBlank
     private String label;
+    @NotBlank
     private String author;
+    @NotBlank
     private String title;
-    private int year; 
+    @NotNull
+    private int year;
     private String editor;
     private String volume;
     private String series;

@@ -6,28 +6,28 @@
         <form class="form-horizontal" role="form" id="referenceForm" action=${param.inproceedingspath} method="POST" >
 
             <div class="form-group">
-                <label for="label" class="col-xs-1 control-label">Label</label>
+                <label for="label" class="col-xs-1 control-label">Label*</label>
                 <div class ="col-xs-11">
                     <input class="form-control" type="text" id ="label" name="label" value="${reference.label}">
                 </div>
             </div>
 
             <div class="form-group">
-                <label for="author" class="col-xs-1 control-label">Author</label>   
+                <label for="author" class="col-xs-1 control-label">Author*</label>   
                 <div class ="col-xs-11">
                     <input class="form-control" type="text" name="author" id="inproceedings-author" value="${reference.author}">
                 </div>
             </div>
 
             <div class="form-group">
-                <label for="title" class="col-xs-1 control-label">Title</label>    
+                <label for="title" class="col-xs-1 control-label">Title*</label>    
                 <div class ="col-xs-11">
                     <input class="form-control" type="text" name="title" id="inproceedings-title" value="${reference.title}">
                 </div>
             </div>
 
             <div class="form-group">
-                <label for="year" class="col-xs-1 control-label">Year</label>   
+                <label for="year" class="col-xs-1 control-label">Year*</label>   
                 <div class ="col-xs-11">
                     <input class="form-control" type="text" name="year" id="inproceedings-year" value="${reference.year}">
                 </div>

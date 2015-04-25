@@ -54,6 +54,11 @@
                     </jsp:include>
                 </c:otherwise>
             </c:choose>
+            <div>
+                <c:if test="${!empty message}">
+                    <p>***${message}***</p>
+                </c:if>
+            </div>
 
             <a class="btn btn-default" href="/references/">Back to main page</a>
 

@@ -6,35 +6,35 @@
         <form class="form-horizontal" id="referenceForm" role="form" action=${param.bookpath} method="POST" >
 
             <div class="form-group">
-                <label class="col-xs-1 control-label" for="label">Label</label>
+                <label class="col-xs-1 control-label" for="label">Label*</label>
                 <div class ="col-xs-11">
                     <input class="form-control" type="text" id ="label" name="label" value="${reference.label}">
                 </div>
             </div>
 
             <div class="form-group">
-                <label for="author" class="col-xs-1 control-label">Author</label>   
+                <label for="author" class="col-xs-1 control-label">Author*</label>   
                 <div class ="col-xs-11">
                     <input class="form-control" type="text" name="author" id="book-author" value="${reference.author}">
                 </div>
             </div>
 
             <div class="form-group">
-                <label for="title" class="col-xs-1 control-label">Title</label>    
+                <label for="title" class="col-xs-1 control-label">Title*</label>    
                 <div class ="col-xs-11">
                     <input class="form-control" type="text" name="title" id="book-title" value="${reference.title}">
                 </div>
             </div>
 
             <div class="form-group">
-                <label for="year" class="col-xs-1 control-label">Year</label>   
+                <label for="year" class="col-xs-1 control-label">Year*</label>   
                 <div class ="col-xs-11">
                     <input class="form-control" type="text" name="year" id="book-year" value="${reference.year}">
                 </div>
             </div>
 
             <div class="form-group">
-                <label for="publisher" class="col-xs-1 control-label">Publisher</label>        
+                <label for="publisher" class="col-xs-1 control-label">Publisher*</label>        
                 <div class ="col-xs-11">
                     <input class="form-control" type="text" name="publisher" id="book-publisher" value="${reference.publisher}">
                 </div>
