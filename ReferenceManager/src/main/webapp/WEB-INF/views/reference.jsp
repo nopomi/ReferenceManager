@@ -11,10 +11,24 @@
 
         <title>Reference</title>
     </head>
-    <body onload="javascript:disableEdit()">
+    <body 
+        <c:if test="${empty message}">
+            onload="javascript:disableEdit()">
+        </c:if>
+
         <h1></h1>
 
         <div class="container">
+
+            <c:choose>
+                <c:when test="${!empty messageUpdated}">
+                    <div class="alert alert-success" role="alert">${messageUpdated}</div>
+                </c:when>
+                <c:when test="${!empty message}">
+                    <br>
+                    <div class="alert alert-danger" role="alert">${message}</div>
+                </c:when>
+            </c:choose>
 
             <c:choose>
                 <c:when test="${reference.type == 'ARTICLE'}">
@@ -54,23 +68,16 @@
                     </jsp:include>
                 </c:otherwise>
             </c:choose>
-            <div>
-                <c:if test="${!empty message}">
-                    <p>***${message}***</p>
-                </c:if>
+
+            <div class="btn-toolbar" role="toolbar">
+                <a class="btn btn-default" role="group "href="/references/">Back to main page</a>
+                <div class="btn-group pull-right" role="group">
+                    <button class="btn btn-default" onclick="undisableEdit()">Edit reference</button>
+                    <a class="btn btn-danger" href="/references/delete/${reference.label}">Delete</a>
+                </div>
             </div>
 
-            <a class="btn btn-default" href="/references/">Back to main page</a>
-
-            <div class="btn-group pull-right" role="group">
-                <button class="btn btn-default" onclick="undisableEdit()">Edit reference</button>
-                <a class="btn btn-danger" href="/references/delete/${reference.label}">Delete</a>
-            </div>
-
-
-        </div>
-
-        <!--javascript-->
-        <script src="../../js/bootstrap.js" type="text/javascript"></script>
+            <!--javascript-->
+            <script src="../../js/bootstrap.js" type="text/javascript"></script>
     </body>
 </html>

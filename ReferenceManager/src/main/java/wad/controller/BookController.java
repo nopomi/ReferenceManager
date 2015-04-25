@@ -31,6 +31,7 @@ public class BookController {
         }
 
         referenceService.addBook(book);
+        redirectAttributes.addFlashAttribute("messageAdded", "Reference added successfully");
         return "redirect:/references";
     }
 
@@ -38,10 +39,11 @@ public class BookController {
     public String updateBook(RedirectAttributes redirectAttributes, @Valid @ModelAttribute BookReference bRef, BindingResult bindingResult) {
         if (bindingResult.hasErrors()) {
             redirectAttributes.addFlashAttribute("message", "Mandatory fields cannot be empty");
-            return "redirect:/references/"+bRef.getLabel();
+            return "redirect:/references/" + bRef.getLabel();
         }
         referenceService.replaceBookReference(bRef);
-        return "redirect:/references/"+bRef.getLabel();
+        redirectAttributes.addFlashAttribute("messageUpdated", "Reference updated");
+        return "redirect:/references/" + bRef.getLabel();
     }
 
 }
