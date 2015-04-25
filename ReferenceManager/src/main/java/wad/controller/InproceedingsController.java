@@ -31,6 +31,7 @@ public class InproceedingsController {
         }
 
         referenceService.addInproceeding(inpr);
+        redirectAttributes.addFlashAttribute("messageAdded", "Reference added successfully");
         return "redirect:/references";
     }
 
@@ -38,10 +39,11 @@ public class InproceedingsController {
     public String updateInproceedings(RedirectAttributes redirectAttributes, @Valid @ModelAttribute InproceedingsReference iRef, BindingResult bindingResult) {
         if (bindingResult.hasErrors()) {
             redirectAttributes.addFlashAttribute("message", "Mandatory fields cannot be empty");
-            return "redirect:/references/"+iRef.getLabel();
+            return "redirect:/references/" + iRef.getLabel();
         }
         referenceService.replaceInproceedingsReference(iRef);
-        return "redirect:/references/"+iRef.getLabel();
+        redirectAttributes.addFlashAttribute("messageUpdated", "Reference updated");
+        return "redirect:/references/" + iRef.getLabel();
     }
 
 }

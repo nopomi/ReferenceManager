@@ -2531,11 +2531,11 @@ fieldset[disabled] .checkbox label {
 }
 .input-sm,
 .form-group-sm .form-control {
-    height: 30px;
-    padding: 5px 10px;
+    height: 34px;
+    padding: 6px 12px;
     font-size: 12px;
     line-height: 1.5;
-    border-radius: 3px;
+    border-radius: 4px;
 }
 select.input-sm,
 select.form-group-sm .form-control {

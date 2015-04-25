@@ -21,22 +21,27 @@
 
             <div role="tabpanel">
                 <ul class="nav nav-tabs" role="tablist">
-                    <li role="presentation" class="active"><a href="#articleReference" aria-controls="articleReference" role="tab" data-toggle="tab">New article reference</a></li>
-                    <li role="presentation"><a href="#bookReference" aria-controls="bookReference" role="tab" data-toggle="tab">New book reference</a></li>
-                    <li role="presentation"><a href="#inproceedingsReference" aria-controls="inproceedingsReference" role="tab" data-toggle="tab">New inproceedings reference</a></li>
-                    <li role="presentation"><a href="#conferenceReference" aria-controls="conferenceReference" role="tab" data-toggle="tab">New conference reference</a></li>
-                    <li role="presentation"><a href="#inCollectionReference" aria-controls="inCollectionReference" role="tab" data-toggle="tab">New incollection reference</a></li>
-                    <li role="presentation"><a href="#bookletReference" aria-controls="bookletReference" role="tab" data-toggle="tab">New booklet reference</a></li>
-
+                    <li role="presentation" class="active"><a href="#articleReference" aria-controls="articleReference" role="tab" data-toggle="tab">Article reference</a></li>
+                    <li role="presentation"><a href="#bookReference" aria-controls="bookReference" role="tab" data-toggle="tab">Book reference</a></li>
+                    <li role="presentation"><a href="#inproceedingsReference" aria-controls="inproceedingsReference" role="tab" data-toggle="tab">Inproceedings reference</a></li>
+                    <li role="presentation"><a href="#conferenceReference" aria-controls="conferenceReference" role="tab" data-toggle="tab">Conference reference</a></li>
+                    <li role="presentation"><a href="#inCollectionReference" aria-controls="inCollectionReference" role="tab" data-toggle="tab">Incollection reference</a></li>
+                    <li role="presentation"><a href="#bookletReference" aria-controls="bookletReference" role="tab" data-toggle="tab">Booklet reference</a></li>
                 </ul>
-
             </div>
+
+            <c:choose>
+                <c:when test="${!empty message}">
+                    <div class="alert alert-warning" role="alert">${message}</div>
+                </c:when>
+                <c:when test="${!empty messageAdded}">
+                    <div class="alert alert-success" role="alert">${messageAdded}</div>
+                </c:when>
+            </c:choose>
+
 
             <!--all forms in tabpanels-->
             <div class="tab-content">
-                <c:if test="${!empty message}">
-                    <p>${message}</p>
-                </c:if>
 
                 <div role="tabpanel" class="tab-pane active" id="articleReference">
                     <jsp:include page="articleForm.jsp" >   
@@ -73,18 +78,14 @@
                         <jsp:param name="bookletpath" value="/booklet" />
                     </jsp:include>
                 </div>
+
+                <!--all references in list-->
+                <%@ include file="allReferencesList.jsp" %>
             </div>
 
-            <!--all references in list-->
-            <%@ include file="allReferencesList.jsp" %>
-
-        </div>
-
-
-
-        <!--javascript source-->
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-        <script src="../../js/bootstrap.js" type="text/javascript"></script>
+            <!--javascript source-->
+            <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+            <script src="../../js/bootstrap.js" type="text/javascript"></script>
     </body>
 </html>
 
