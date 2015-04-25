@@ -1,0 +1,25 @@
+
+package wad.controller;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import wad.domain.BookletReference;
+import wad.service.ReferenceService;
+
+@Controller
+@RequestMapping("booklet")
+public class BookletController {
+    
+    @Autowired
+    private ReferenceService referenceService;
+    
+    @RequestMapping(method = RequestMethod.POST)
+    public String addBooklet(@ModelAttribute BookletReference br) {
+        referenceService.addBooklet(br);
+        return "redirect:/references";
+    }
+}
+

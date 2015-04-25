@@ -21,8 +21,14 @@ import wad.domain.ArticleReference;
 import wad.domain.BookReference;
 import wad.domain.InproceedingsReference;
 import wad.domain.BibCreator;
+import wad.domain.BookletReference;
+import wad.domain.ConferenceReference;
+import wad.domain.IncollectionReference;
 import wad.repository.ArticleRepository;
 import wad.repository.BookRepository;
+import wad.repository.BookletRepository;
+import wad.repository.ConferenceRepository;
+import wad.repository.IncollectionRepository;
 import wad.repository.InproceedingsRepository;
 import wad.service.ReferenceService;
 
@@ -41,6 +47,15 @@ public class ReferenceController {
 
     @Autowired
     private ArticleRepository articleRepository;
+    
+    @Autowired
+    private ConferenceRepository conferenceRepository;
+    
+    @Autowired
+    private IncollectionRepository incollectionRepository;
+    
+    @Autowired
+    private BookletRepository bookletRepository;
 
     @Autowired
     private ServletContext ctx;
@@ -50,6 +65,9 @@ public class ReferenceController {
         model.addAttribute("articles", referenceService.listArticles());
         model.addAttribute("books", referenceService.listBooks());
         model.addAttribute("inps", referenceService.listInproceedings());
+        model.addAttribute("conferences", referenceService.listConferences());
+        model.addAttribute("incollections", referenceService.listIncollection());
+        model.addAttribute("booklets", referenceService.listBooklets());
         return "/WEB-INF/views/references.jsp";
     }
 
@@ -75,17 +93,67 @@ public class ReferenceController {
     public String view(Model model, @PathVariable String label) {
         List<ArticleReference> aRefs = articleRepository.findByLabel(label);
         List<BookReference> bRefs = bookRepository.findByLabel(label);
-        List<InproceedingsReference> iRefs = inproceedingsRepository.findByLabel(label);
+        List<InproceedingsReference> ipRefs = inproceedingsRepository.findByLabel(label);
+        List<ConferenceReference> cRefs = conferenceRepository.findByLabel(label);
+        List<IncollectionReference> icRefs = incollectionRepository.findByLabel(label);
+        List<BookletReference> bookletRefs = bookletRepository.findByLabel(label);
         if (!aRefs.isEmpty()) {
             model.addAttribute("reference", aRefs.get(0));
-            return "/WEB-INF/views/reference.jsp";
-        } else if (!bRefs.isEmpty()) {
+        }
+        if (!bRefs.isEmpty()) {
             model.addAttribute("reference", bRefs.get(0));
-            return "/WEB-INF/views/reference.jsp";
-        } else {
-            model.addAttribute("reference", iRefs.get(0));
-            return "/WEB-INF/views/reference.jsp";
+        } 
+        if (!ipRefs.isEmpty()){
+            model.addAttribute("reference", ipRefs.get(0));
+        }
+        if (!cRefs.isEmpty()) {
+            model.addAttribute("reference", cRefs.get(0));
+        }
+        if (!icRefs.isEmpty()) {
+            model.addAttribute("reference", icRefs.get(0));
+        } 
+        if (!bookletRefs.isEmpty()){
+            model.addAttribute("reference", bookletRefs.get(0));
+        }
+        
+        return "/WEB-INF/views/reference.jsp";
+    }
+    
+    @RequestMapping(value = "/delete/{label}", method = RequestMethod.DELETE) 
+    public void delete(@PathVariable String label) {
+        List<ArticleReference> aRefs = articleRepository.findByLabel(label);
+        List<BookReference> bRefs = bookRepository.findByLabel(label);
+        List<InproceedingsReference> ipRefs = inproceedingsRepository.findByLabel(label);
+        List<ConferenceReference> cRefs = conferenceRepository.findByLabel(label);
+        List<IncollectionReference> icRefs = incollectionRepository.findByLabel(label);
+        List<BookletReference> bookletRefs = bookletRepository.findByLabel(label);
+
+        if (!bRefs.isEmpty()) {
+            BookReference book = bRefs.get(0);
+            bookRepository.delete(book);
+        }
+        if (!aRefs.isEmpty()) {
+            ArticleReference article = aRefs.get(0);
+            articleRepository.delete(article);
+        }
+        if (!ipRefs.isEmpty()) {
+            InproceedingsReference inproceedings = ipRefs.get(0);
+            inproceedingsRepository.delete(inproceedings);
+        }
+        
+        if (!cRefs.isEmpty()) {
+            ConferenceReference cr = cRefs.get(0);
+            conferenceRepository.delete(cr);
+        }
+        if (!aRefs.isEmpty()) {
+            IncollectionReference icr = icRefs.get(0);
+            incollectionRepository.delete(icr);
+        }
+        if (!ipRefs.isEmpty()) {
+            BookletReference booklet = bookletRefs.get(0);
+            bookletRepository.delete(booklet);
         }
     }
+
 
 }
