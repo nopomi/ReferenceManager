@@ -6,10 +6,16 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import wad.domain.ArticleReference;
 import wad.domain.BookReference;
+import wad.domain.BookletReference;
+import wad.domain.ConferenceReference;
+import wad.domain.IncollectionReference;
 import wad.domain.InproceedingsReference;
 import wad.domain.ReferenceType;
 import wad.repository.ArticleRepository;
 import wad.repository.BookRepository;
+import wad.repository.BookletRepository;
+import wad.repository.ConferenceRepository;
+import wad.repository.IncollectionRepository;
 import wad.repository.InproceedingsRepository;
 
 @Service
@@ -21,6 +27,12 @@ public class ReferenceService {
     private InproceedingsRepository inproceedingsRepository;
     @Autowired
     private BookRepository bookRepository;
+    @Autowired
+    private ConferenceRepository conferenceRepository;
+    @Autowired
+    private IncollectionRepository incollectionRepository;
+    @Autowired
+    private BookletRepository bookletRepository;
 
     public Iterable<ArticleReference> listArticles() {
         return articleRepository.findAll();
@@ -32,6 +44,18 @@ public class ReferenceService {
 
     public Iterable<InproceedingsReference> listInproceedings() {
         return inproceedingsRepository.findAll();
+    }
+    
+    public Iterable<ConferenceReference> listConferences() {
+        return conferenceRepository.findAll();
+    }
+    
+    public Iterable<IncollectionReference> listIncollection() {
+        return incollectionRepository.findAll();
+    }
+    
+    public Iterable<BookletReference> listBooklets() {
+        return bookletRepository.findAll();
     }
 
     @Transactional
@@ -50,6 +74,24 @@ public class ReferenceService {
     public void addInproceeding(InproceedingsReference inproceedings) {
         inproceedings.setType(ReferenceType.INPROCEEDINGS);
         inproceedingsRepository.save(inproceedings);
+    }
+    
+    @Transactional
+    public void addConference(ConferenceReference cr) {
+        cr.setType(ReferenceType.CONFERENCE);
+        conferenceRepository.save(cr);
+    }
+    
+    @Transactional
+    public void addIncollection(IncollectionReference ir) {
+        ir.setType(ReferenceType.INCOLLECTION);
+        incollectionRepository.save(ir);
+    }
+    
+    @Transactional
+    public void addBooklet(BookletReference br) {
+        br.setType(ReferenceType.BOOKLET);
+        bookletRepository.save(br);
     }
 
     public boolean labelExists(String label) {

@@ -50,17 +50,17 @@
                 </c:when>
 
 
-                <%--<c:when test="${reference.type == 'CONFERENCE'}">--%>
-                <%--<jsp:include page="conferenceForm.jsp" >--%>   
-                <%--<jsp:param name="conferencepath" value="/conference/${reference.label}/update" />--%>
-                <%--</jsp:include>--%>
-                <%--</c:when>--%>
+                <c:when test="${reference.type == 'CONFERENCE'}">
+                    <jsp:include page="conferenceForm.jsp" >  
+                        <jsp:param name="conferencepath" value="/conference/${reference.label}/update" />
+                    </jsp:include>
+                </c:when>
 
-                <%--<c:when test="${reference.type == 'INCOLLECTION'}">--%>
-                <%--<jsp:include page="incollectionForm.jsp" >--%>   
-                <%--<jsp:param name="incollectionpath" value="/incollection/${reference.label}/update" />--%>
-                <%--</jsp:include>--%>
-                <%--</c:when>--%>
+                <c:when test="${reference.type == 'INCOLLECTION'}">
+                    <jsp:include page="incollectionForm.jsp" >  
+                        <jsp:param name="incollectionpath" value="/incollection/${reference.label}/update" />
+                    </jsp:include>
+                </c:when>
 
                 <c:otherwise>
                     <jsp:include page="bookletForm.jsp" >   
@@ -69,13 +69,15 @@
                 </c:otherwise>
             </c:choose>
 
-            <div class="btn-toolbar" role="toolbar">
-                <a class="btn btn-default" role="group "href="/references/">Back to main page</a>
-                <div class="btn-group pull-right" role="group">
-                    <button class="btn btn-default" onclick="undisableEdit()">Edit reference</button>
-                    <a class="btn btn-danger" href="/references/delete/${reference.label}">Delete</a>
+            <form method="POST" action="/references/delete/${reference.label}">
+                <div class="btn-toolbar" role="toolbar">
+                    <a class="btn btn-default" role="group "href="/references/">Back to main page</a>
+                    <div class="btn-group pull-right" role="group">
+                        <button type="button" class="btn btn-default" onclick="undisableEdit()">Edit reference</button>
+                        <input type="submit" class="btn btn-danger" value="Delete"/>
+                    </div>
                 </div>
-            </div>
+            </form>
 
             <!--javascript-->
             <script src="../../js/bootstrap.js" type="text/javascript"></script>
