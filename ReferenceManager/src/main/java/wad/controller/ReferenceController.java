@@ -75,7 +75,7 @@ public class ReferenceController {
     public void getLogFile(HttpSession session, HttpServletResponse response) {
         try {
             BibCreator bC = new BibCreator();
-            String filename = bC.createBibFile(ctx, referenceService.listArticles(), referenceService.listInproceedings(), referenceService.listBooks());
+            String filename = bC.createBibFile(ctx, referenceService);
             System.out.println(filename);
             File fileToDownload = new File("tmp/" + filename);
             InputStream inputStream = new FileInputStream(fileToDownload);

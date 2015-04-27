@@ -9,6 +9,9 @@ import org.junit.Test;
 import static org.junit.Assert.*;
 import wad.domain.ArticleReference;
 import wad.domain.BookReference;
+import wad.domain.BookletReference;
+import wad.domain.ConferenceReference;
+import wad.domain.IncollectionReference;
 import wad.domain.InproceedingsReference;
 import wad.domain.ReferenceType;
 
@@ -18,6 +21,9 @@ public class ParserTest {
     private ArticleReference aRef;
     private BookReference bRef;
     private InproceedingsReference iRef;
+    private ConferenceReference cRef;
+    private IncollectionReference icolRef;
+    private BookletReference bletRef;
 
     @Before
     public void setUp() {
@@ -25,6 +31,10 @@ public class ParserTest {
         aRef = new ArticleReference();
         bRef = new BookReference();
         iRef = new InproceedingsReference();
+        cRef = new ConferenceReference();
+        icolRef = new IncollectionReference();
+        bletRef = new BookletReference();
+
     }
 
     @Test
@@ -104,4 +114,80 @@ public class ParserTest {
 
     }
 
+    @Test
+    public void conferenceParserWorks() {
+        cRef.setType(ReferenceType.CONFERENCE);
+        cRef.setAddress("address");
+        cRef.setAuthor("author");
+        cRef.setEditor("editor");
+        cRef.setKey("key");
+        cRef.setLabel("XXX");
+        cRef.setMonth("month");
+        cRef.setNote("note");
+        cRef.setOrganization("ABB");
+        cRef.setPages("200-300");
+        cRef.setPublisher("publisher");
+        cRef.setSeries("series");
+        cRef.setTitle("title");
+        cRef.setYear(2000);
+
+        String reference = parser.createBibTexString(cRef);
+        assertTrue(reference.contains("@conference"));
+        assertTrue(reference.contains("address"));
+        assertTrue(reference.contains("key"));
+        assertTrue(reference.contains("XXX"));
+        assertTrue(reference.contains("pages"));
+        assertFalse(reference.contains("volume"));
+
+    }
+    
+    @Test
+    public void BookletParserWorks(){
+        bletRef.setType(ReferenceType.BOOKLET);
+        bletRef.setAddress("address");
+        bletRef.setAuthor("author");
+        bletRef.setHowpublished("by_mail");
+        bletRef.setKey("key");
+        bletRef.setLabel("BLET");
+        bletRef.setMonth("August");
+        bletRef.setYear(2000);
+        
+        String reference = parser.createBibTexString(bletRef);
+        assertTrue(reference.contains("@booklet"));
+        assertFalse(reference.contains("note"));
+        assertTrue(reference.contains("August"));
+        assertTrue(reference.contains("2000"));
+        assertTrue(reference.contains("BLET"));
+        assertTrue(reference.contains("month"));
+        assertTrue(reference.contains("by_mail"));
+    }
+    
+    @Test
+    public void IncollectionParserWorks(){
+        icolRef.setType(ReferenceType.INCOLLECTION);
+        icolRef.setBooktitle("bookTitle");
+        icolRef.setAddress("address");
+        icolRef.setAuthor("author");
+        icolRef.setIncollectiontype("type");
+        icolRef.setNumber("2");
+        icolRef.setChapter("chapt");
+        icolRef.setEdition("7th");
+        icolRef.setEditor("Keijo");
+        icolRef.setKey("key");
+        icolRef.setLabel("KKD123");
+        icolRef.setMonth("August");
+        icolRef.setNumber("5");
+        icolRef.setPages("200-300");
+        icolRef.setPublisher("Pearson");
+        icolRef.setSeries("series");
+        icolRef.setTitle("title");
+        
+        String reference = parser.createBibTexString(icolRef);
+        assertTrue(reference.contains("@incollection"));
+        assertTrue(reference.contains("August"));
+        assertFalse(reference.contains("note"));
+        assertTrue(reference.contains("200-300"));
+        assertTrue(reference.contains("title"));
+        assertTrue(reference.contains("publisher"));
+    }
 }

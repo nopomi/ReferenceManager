@@ -45,15 +45,15 @@ public class ReferenceService {
     public Iterable<InproceedingsReference> listInproceedings() {
         return inproceedingsRepository.findAll();
     }
-    
+
     public Iterable<ConferenceReference> listConferences() {
         return conferenceRepository.findAll();
     }
-    
+
     public Iterable<IncollectionReference> listIncollection() {
         return incollectionRepository.findAll();
     }
-    
+
     public Iterable<BookletReference> listBooklets() {
         return bookletRepository.findAll();
     }
@@ -75,19 +75,19 @@ public class ReferenceService {
         inproceedings.setType(ReferenceType.INPROCEEDINGS);
         inproceedingsRepository.save(inproceedings);
     }
-    
+
     @Transactional
     public void addConference(ConferenceReference cr) {
         cr.setType(ReferenceType.CONFERENCE);
         conferenceRepository.save(cr);
     }
-    
+
     @Transactional
     public void addIncollection(IncollectionReference ir) {
         ir.setType(ReferenceType.INCOLLECTION);
         incollectionRepository.save(ir);
     }
-    
+
     @Transactional
     public void addBooklet(BookletReference br) {
         br.setType(ReferenceType.BOOKLET);
@@ -98,40 +98,66 @@ public class ReferenceService {
         List<ArticleReference> aList = articleRepository.findByLabel(label);
         List<BookReference> bList = bookRepository.findByLabel(label);
         List<InproceedingsReference> iList = inproceedingsRepository.findByLabel(label);
-
-        return !(aList.isEmpty() && bList.isEmpty() && iList.isEmpty());
+        List<ConferenceReference> cList = conferenceRepository.findByLabel(label);
+        List<BookletReference> bookletList = bookletRepository.findByLabel(label);
+        List<IncollectionReference> incolList = incollectionRepository.findByLabel(label);
+        if (cList.isEmpty() && bookletList.isEmpty() && incolList.isEmpty()) {
+            return !(aList.isEmpty() && bList.isEmpty() && iList.isEmpty());
+        }
+        return true;
     }
-    
+
     @Transactional
-    public void replaceArticleReference(ArticleReference reference){
+    public void replaceArticleReference(ArticleReference reference) {
         deleteReference(reference.getLabel());
         addArticle(reference);
     }
-    
+
     @Transactional
-    public void replaceBookReference(BookReference reference){
+    public void replaceBookReference(BookReference reference) {
         deleteReference(reference.getLabel());
         addBook(reference);
     }
-    
+
     @Transactional
-    public void replaceInproceedingsReference(InproceedingsReference reference){
+    public void replaceInproceedingsReference(InproceedingsReference reference) {
         deleteReference(reference.getLabel());
         addInproceeding(reference);
     }
+
+    @Transactional
+    public void replaceConferenceReference(ConferenceReference reference) {
+        deleteReference(reference.getLabel());
+        addConference(reference);
+    }
+
+    @Transactional
+    public void replaceIncollectionReference(IncollectionReference reference){
+        deleteReference(reference.getLabel());
+        addIncollection(reference);
+    }
     
     @Transactional
-    public void deleteReference(String label){
-        List<ArticleReference> aList = articleRepository.findByLabel(label);
-        List<BookReference> bList = bookRepository.findByLabel(label);
-        List<InproceedingsReference> iList = inproceedingsRepository.findByLabel(label);
-        
-        if(!aList.isEmpty()){
-            articleRepository.delete(aList.get(0));
-        } else if (!bList.isEmpty()){
-            bookRepository.delete(bList.get(0));
-        } else if (!iList.isEmpty()){
-            inproceedingsRepository.delete(iList.get(0));
+    public void replaceBookletReference(BookletReference reference){
+        deleteReference(reference.getLabel());
+        addBooklet(reference);
+    }
+    
+    @Transactional
+    public void deleteReference(String label) {
+
+        if (!articleRepository.findByLabel(label).isEmpty()) {
+            articleRepository.delete(articleRepository.findByLabel(label).get(0));
+        } else if (!bookRepository.findByLabel(label).isEmpty()) {
+            bookRepository.delete(bookRepository.findByLabel(label).get(0));
+        } else if (!inproceedingsRepository.findByLabel(label).isEmpty()) {
+            inproceedingsRepository.delete(inproceedingsRepository.findByLabel(label).get(0));
+        } else if (!conferenceRepository.findByLabel(label).isEmpty()) {
+            conferenceRepository.delete(conferenceRepository.findByLabel(label).get(0));
+        } else if (!bookletRepository.findByLabel(label).isEmpty()) {
+            bookletRepository.delete(bookletRepository.findByLabel(label).get(0));
+        } else if (!incollectionRepository.findByLabel(label).isEmpty()) {
+            incollectionRepository.delete(incollectionRepository.findByLabel(label).get(0));
         }
     }
 
