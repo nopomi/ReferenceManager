@@ -1,6 +1,6 @@
 <div class="panel panel-default">
     <div class="panel-heading">
-        <h4 class="panel-title">New Inproceedings Reference</h4>
+        <h4 class="panel-title">Inproceedings Reference</h4>
     </div>
     <div class="panel-body">
         <form class="form-horizontal" role="form" id="referenceForm" action=${param.inproceedingspath} method="POST" >

@@ -24,6 +24,18 @@ public class Parser {
         return createBookBib(reference);
     }
 
+    public String createBibTexString(BookletReference reference) {
+        return createBookletBib(reference);
+    }
+
+    public String createBibTexString(ConferenceReference reference) {
+        return createConferenceBib(reference);
+    }
+
+    public String createBibTexString(IncollectionReference reference) {
+        return createIncollectionBib(reference);
+    }
+
     private String createArticleBib(ArticleReference articleRef) {
         StringBuilder builder = new StringBuilder();
         builder.append("@article{");
@@ -91,44 +103,167 @@ public class Parser {
         return builder.toString();
     }
 
-    private String createInproceedingsBib(InproceedingsReference inproceedingsRef) {
+    private String createInproceedingsBib(InproceedingsReference reference) {
         StringBuilder builder = new StringBuilder();
         builder.append("@inproceedings{");
-        builder.append(inproceedingsRef.getLabel() + ",\n");
-        builder.append("author = {" + inproceedingsRef.getAuthor() + e);
-        builder.append("title = {" + inproceedingsRef.getTitle() + e);
-        builder.append("year = {" + inproceedingsRef.getYear() + e);
-        if (inproceedingsRef.getEditor() != null) {
-            builder.append("editor = {" + inproceedingsRef.getEditor() + e);
+        builder.append(reference.getLabel() + ",\n");
+        builder.append("author = {" + reference.getAuthor() + e);
+        builder.append("title = {" + reference.getTitle() + e);
+        builder.append("year = {" + reference.getYear() + e);
+        if (reference.getEditor() != null) {
+            builder.append("editor = {" + reference.getEditor() + e);
         }
-        if (inproceedingsRef.getVolume() != null) {
-            builder.append("volume = {" + inproceedingsRef.getVolume() + e);
+        if (reference.getVolume() != null) {
+            builder.append("volume = {" + reference.getVolume() + e);
         }
-        if (inproceedingsRef.getSeries() != null) {
-            builder.append("series = {" + inproceedingsRef.getSeries() + e);
+        if (reference.getSeries() != null) {
+            builder.append("series = {" + reference.getSeries() + e);
         }
-        if (inproceedingsRef.getPages() != null) {
-            builder.append("pages = {" + inproceedingsRef.getPages() + e);
+        if (reference.getPages() != null) {
+            builder.append("pages = {" + reference.getPages() + e);
         }
-        if (inproceedingsRef.getAddress() != null) {
-            builder.append("address = {" + inproceedingsRef.getAddress() + e);
+        if (reference.getAddress() != null) {
+            builder.append("address = {" + reference.getAddress() + e);
         }
-        if (inproceedingsRef.getMonth() != null) {
-            builder.append("month = {" + inproceedingsRef.getMonth() + e);
+        if (reference.getMonth() != null) {
+            builder.append("month = {" + reference.getMonth() + e);
         }
-        if (inproceedingsRef.getOrganization() != null) {
-            builder.append("organization = {" + inproceedingsRef.getOrganization() + e);
+        if (reference.getOrganization() != null) {
+            builder.append("organization = {" + reference.getOrganization() + e);
         }
-        if (inproceedingsRef.getPublisher() != null) {
-            builder.append("publisher = {" + inproceedingsRef.getPublisher() + e);
+        if (reference.getPublisher() != null) {
+            builder.append("publisher = {" + reference.getPublisher() + e);
         }
-        if (inproceedingsRef.getNote() != null) {
-            builder.append("note = {" + inproceedingsRef.getNote() + e);
+        if (reference.getNote() != null) {
+            builder.append("note = {" + reference.getNote() + e);
         }
-        if (inproceedingsRef.getKey() != null) {
-            builder.append("key = {" + inproceedingsRef.getKey() + e);
+        if (reference.getKey() != null) {
+            builder.append("key = {" + reference.getKey() + e);
         }
         builder.append(c);
+        return builder.toString();
+    }
+
+    private String createBookletBib(BookletReference reference) {
+        StringBuilder builder = new StringBuilder();
+        builder.append("@booklet{");
+        builder.append(reference.getLabel() + ",\n");
+        builder.append("title = {" + reference.getTitle() + e);
+        if (reference.getAuthor() != null) {
+            builder.append("author = {" + reference.getAuthor() + e);
+        }
+        if (reference.getHowpublished() != null) {
+            builder.append("howpublished = {" + reference.getHowpublished() + e);
+        }
+        if (reference.getAddress() != null) {
+            builder.append("address = {" + reference.getAddress() + e);
+        }
+        if (reference.getMonth() != null) {
+            builder.append("month = {" + reference.getMonth() + e);
+        }
+        if (reference.getYear() > 0) {
+            builder.append("year = {" + reference.getYear() + e);
+        }
+        if (reference.getNote() != null) {
+            builder.append("note = {" + reference.getNote() + e);
+        }
+        if (reference.getKey() != null) {
+            builder.append("key = {" + reference.getKey());
+        }
+        builder.append(c);
+        return builder.toString();
+    }
+
+    private String createConferenceBib(ConferenceReference reference) {
+        StringBuilder builder = new StringBuilder();
+        builder.append("@inproceedings{");
+        builder.append(reference.getLabel() + ",\n");
+        builder.append("author = {" + reference.getAuthor() + e);
+        builder.append("title = {" + reference.getTitle() + e);
+        builder.append("year = {" + reference.getYear() + e);
+        if (reference.getEditor() != null) {
+            builder.append("editor = {" + reference.getEditor() + e);
+        }
+        if (reference.getVolume() != null) {
+            builder.append("volume = {" + reference.getVolume() + e);
+        }
+        if (reference.getSeries() != null) {
+            builder.append("series = {" + reference.getSeries() + e);
+        }
+        if (reference.getPages() != null) {
+            builder.append("pages = {" + reference.getPages() + e);
+        }
+        if (reference.getAddress() != null) {
+            builder.append("address = {" + reference.getAddress() + e);
+        }
+        if (reference.getMonth() != null) {
+            builder.append("month = {" + reference.getMonth() + e);
+        }
+        if (reference.getOrganization() != null) {
+            builder.append("organization = {" + reference.getOrganization() + e);
+        }
+        if (reference.getPublisher() != null) {
+            builder.append("publisher = {" + reference.getPublisher() + e);
+        }
+        if (reference.getNote() != null) {
+            builder.append("note = {" + reference.getNote() + e);
+        }
+        if (reference.getKey() != null) {
+            builder.append("key = {" + reference.getKey() + e);
+        }
+        builder.append(c);
+        return builder.toString();
+    }
+
+    private String createIncollectionBib(IncollectionReference reference) {
+        StringBuilder builder = new StringBuilder();
+        builder.append("incollection{");
+        builder.append(reference.getLabel() + ",\n");
+        builder.append("author = {" + reference.getAuthor() + e);
+        builder.append("title = {" + reference.getTitle() + e);
+        if (reference.getBooktitle() != null) {
+            builder.append("booktitle = {" + reference.getBooktitle() + e);
+        }
+        builder.append("publisher = {" + reference.getPublisher() + e);
+        builder.append("year = {" + reference.getYear() + e);
+        if (reference.getEditor() != null) {
+            builder.append("editor = {" + reference.getEditor() + e);
+        }
+        if (reference.getNumber() != null) {
+            builder.append("number = {" + reference.getNumber() + e);
+        }
+        if (reference.getVolume() != null) {
+            builder.append("volume = {" + reference.getVolume() + e);
+        }
+        if (reference.getSeries() != null) {
+            builder.append("series = {" + reference.getSeries() + e);
+        }
+        if (reference.getIncollectiontype() != null) {
+            builder.append("type = {" + reference.getIncollectiontype() + e);
+        }
+        if(reference.getChapter()!=null){
+            builder.append("chapter = {"+ reference.getChapter()+e);
+        }
+        if(reference.getPages()!=null){
+            builder.append("pages = {" +  reference.getPages()+e);
+        }
+        if(reference.getAddress()!=null){
+            builder.append("address = {" + reference.getAddress()+e);
+        }
+        if(reference.getEdition()!=null){
+            builder.append("edition = {" + reference.getEdition()+e);
+        }
+        if(reference.getMonth()!=null){
+            builder.append("month = {"+reference.getMonth()+e);
+        }
+        if(reference.getNote()!=null){
+            builder.append("note = {"+reference.getNote()+e);
+        }
+        if(reference.getKey()!=null){
+            builder.append("key = {"+reference.getKey()+e);
+        }
+        builder.append(c);
+        
         return builder.toString();
     }
 
