@@ -41,7 +41,7 @@
             </div>
 
             <div class="form-group">
-                <label for="year" class="col-xs-1 control-label">Year</label>   
+                <label for="year" class="col-xs-1 control-label">Year*</label>   
                 <div class ="col-xs-11">
                     <input class="form-control" type="text" name="year" id="inproceedings-year" value="${reference.year}">
                 </div>

@@ -82,13 +82,6 @@
             </div>
 
             <div class="form-group">
-                <label for="organization" class="col-xs-1 control-label">Organization</label>        
-                <div class ="col-xs-11">
-                    <input class="form-control" type="text" name="organization" id="organization" value="${reference.organization}">
-                </div>
-            </div>
-
-            <div class="form-group">
                 <label for="publisher" class="col-xs-1 control-label">Publisher*</label>        
                 <div class ="col-xs-11">
                     <input class="form-control" type="text" name="publisher" id="publisher" value="${reference.publisher}">
