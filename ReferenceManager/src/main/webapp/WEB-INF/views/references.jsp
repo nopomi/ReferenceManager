@@ -19,6 +19,15 @@
 
             <!--tabs to open reference form-->
 
+            <c:choose>
+                <c:when test="${!empty message}">
+                    <div class="alert alert-warning" role="alert">${message}</div>
+                </c:when>
+                <c:when test="${!empty messageAdded}">
+                    <div class="alert alert-success" role="alert">${messageAdded}</div>
+                </c:when>
+            </c:choose>
+
             <div role="tabpanel">
                 <ul class="nav nav-tabs" role="tablist">
                     <li role="presentation" class="active"><a href="#articleReference" aria-controls="articleReference" role="tab" data-toggle="tab">Article reference</a></li>
@@ -29,16 +38,6 @@
                     <li role="presentation"><a href="#bookletReference" aria-controls="bookletReference" role="tab" data-toggle="tab">Booklet reference</a></li>
                 </ul>
             </div>
-
-            <c:choose>
-                <c:when test="${!empty message}">
-                    <div class="alert alert-warning" role="alert">${message}</div>
-                </c:when>
-                <c:when test="${!empty messageAdded}">
-                    <div class="alert alert-success" role="alert">${messageAdded}</div>
-                </c:when>
-            </c:choose>
-
 
             <!--all forms in tabpanels-->
             <div class="tab-content">

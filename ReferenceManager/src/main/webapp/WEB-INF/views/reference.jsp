@@ -26,7 +26,7 @@
                 </c:when>
                 <c:when test="${!empty message}">
                     <br>
-                    <div class="alert alert-danger" role="alert">${message}</div>
+                    <div class="alert alert-warning" role="alert">${message}</div>
                 </c:when>
             </c:choose>
 

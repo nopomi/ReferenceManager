@@ -31,6 +31,7 @@ import wad.repository.ConferenceRepository;
 import wad.repository.IncollectionRepository;
 import wad.repository.InproceedingsRepository;
 import wad.service.ReferenceService;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 @Controller
 @RequestMapping("references")
@@ -120,7 +121,7 @@ public class ReferenceController {
     }
 
     @RequestMapping(value = "/delete/{label}", method = RequestMethod.POST)
-    public String delete(@PathVariable String label) {
+    public String delete(@PathVariable String label, RedirectAttributes redirectAttributes) {
         List<ArticleReference> aRefs = articleRepository.findByLabel(label);
         List<BookReference> bRefs = bookRepository.findByLabel(label);
         List<InproceedingsReference> ipRefs = inproceedingsRepository.findByLabel(label);
@@ -147,6 +148,8 @@ public class ReferenceController {
         if (!bookletRefs.isEmpty()) {
             bookletRepository.delete(bookletRefs.get(0).getId());
         }
+
+        redirectAttributes.addFlashAttribute("messageAdded", "Reference " + label + " deleted");
 
         return "redirect:/references";
 
