@@ -24,10 +24,8 @@ public class BibCreator {
     public String createBibFile(ServletContext ctx, ReferenceService refService){
         FileWriter writer;
         String fileName = System.currentTimeMillis()+".bib";
-        String path = "";
         Parser parser = new Parser();
         try {
-            path = ctx.getRealPath(fileName);
             writer = new FileWriter("tmp/"+fileName);
             for (BookReference bookRef : refService.listBooks()) {
                 writer.append(parser.createBibTexString(bookRef));
