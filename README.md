@@ -6,4 +6,5 @@ Huikea viitteidenhallintajärjestelmä
 [Burndown chart](https://docs.google.com/spreadsheets/d/1gpbOTxvVs0so2b4CwI7GaKjN1kx-n_6A2tOOf2RHzPw/edit?usp=sharing)  
 [Heroku-app](https://reference-manager.herokuapp.com/)  
 [Backup heroku version (in case of issues with deployment)](https://lit-journey-2978.herokuapp.com/references) 
+[Miniprojekti raportti](https://docs.google.com/document/d/1Qxw1-8jL-bDRSejAQldw0m7AMiWN4Z_SRrliziIC7rM/pub) 
 
